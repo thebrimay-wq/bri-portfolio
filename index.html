@@ -966,6 +966,47 @@
   /* ═══════════════════════════════
      UTILITIES & ANIMATIONS
   ═══════════════════════════════ */
+  @keyframes logoScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .logo-ticker {
+    overflow: hidden;
+    padding: 36px 0;
+    background: var(--white);
+    border-top: 1px solid var(--accent-light);
+    border-bottom: 1px solid var(--accent-light);
+  }
+  .logo-ticker-track {
+    display: flex;
+    width: max-content;
+    animation: logoScroll 45s linear infinite;
+  }
+  .logo-ticker-track:hover, .logo-ticker-track:focus-within { animation-play-state: paused; }
+  .logo-ticker-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 0 44px;
+    flex-shrink: 0;
+  }
+  .logo-ticker-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.6);
+    transition: filter 0.3s;
+  }
+  .logo-ticker-item:hover img { filter: grayscale(0%) opacity(1); }
+  .logo-ticker-item span {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
@@ -1122,6 +1163,61 @@
       </div>
     </div>
   </section>
+
+  <!-- Logo ticker -->
+  <div class="logo-ticker" aria-label="Clients & Collaborators">
+    <div class="logo-ticker-track">
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/meta.com" alt="Meta" /><span>Meta</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/nike.com" alt="Nike" /><span>Nike</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/google.com" alt="Google" /><span>Google</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/apple.com" alt="Apple" /><span>Apple</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/spotify.com" alt="Spotify" /><span>Spotify</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/adobe.com" alt="Adobe" /><span>Adobe</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/patagonia.com" alt="Patagonia" /><span>Patagonia</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/jpmorganchase.com" alt="JP Morgan Chase" /><span>JP Morgan Chase</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/nba.com" alt="NBA" /><span>NBA</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/mckinsey.com" alt="McKinsey & Company" /><span>McKinsey & Co.</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/nfl.com" alt="NFL" /><span>NFL</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/mlssoccer.com" alt="MLS" /><span>MLS</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/nestle.com" alt="Nestlé" /><span>Nestlé</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/lvmh.com" alt="LVMH" /><span>LVMH</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/sephora.com" alt="Sephora" /><span>Sephora</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/cvs.com" alt="CVS Health" /><span>CVS Health</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/financialfinesse.com" alt="Financial Finesse" /><span>Financial Finesse</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/adidas.com" alt="Adidas" /><span>Adidas</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/underarmour.com" alt="Under Armour" /><span>Under Armour</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/coca-cola.com" alt="Coca-Cola" /><span>Coca-Cola</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/americanexpress.com" alt="American Express" /><span>American Express</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/goldmansachs.com" alt="Goldman Sachs" /><span>Goldman Sachs</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/target.com" alt="Target" /><span>Target</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/verizon.com" alt="Verizon" /><span>Verizon</span></div>
+      <!-- duplicate set for seamless loop -->
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/meta.com" alt="Meta" /><span>Meta</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/nike.com" alt="Nike" /><span>Nike</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/google.com" alt="Google" /><span>Google</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/apple.com" alt="Apple" /><span>Apple</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/spotify.com" alt="Spotify" /><span>Spotify</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/adobe.com" alt="Adobe" /><span>Adobe</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/patagonia.com" alt="Patagonia" /><span>Patagonia</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/jpmorganchase.com" alt="JP Morgan Chase" /><span>JP Morgan Chase</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/nba.com" alt="NBA" /><span>NBA</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/mckinsey.com" alt="McKinsey & Company" /><span>McKinsey & Co.</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/nfl.com" alt="NFL" /><span>NFL</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/mlssoccer.com" alt="MLS" /><span>MLS</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/nestle.com" alt="Nestlé" /><span>Nestlé</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/lvmh.com" alt="LVMH" /><span>LVMH</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/sephora.com" alt="Sephora" /><span>Sephora</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/cvs.com" alt="CVS Health" /><span>CVS Health</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/financialfinesse.com" alt="Financial Finesse" /><span>Financial Finesse</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/adidas.com" alt="Adidas" /><span>Adidas</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/underarmour.com" alt="Under Armour" /><span>Under Armour</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/coca-cola.com" alt="Coca-Cola" /><span>Coca-Cola</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/americanexpress.com" alt="American Express" /><span>American Express</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/goldmansachs.com" alt="Goldman Sachs" /><span>Goldman Sachs</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/target.com" alt="Target" /><span>Target</span></div>
+      <div class="logo-ticker-item"><img src="https://logo.clearbit.com/verizon.com" alt="Verizon" /><span>Verizon</span></div>
+    </div>
+  </div>
 
   <section class="featured-work">
     <div class="section-label">Selected Work</div>
