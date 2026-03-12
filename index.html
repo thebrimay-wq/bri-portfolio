@@ -778,13 +778,21 @@
 
     /* Philosophy */
     .phil-inner { max-width: var(--read-w); }
-    .phil-inner p {
+    .phil-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s4);
+    }
+    .phil-list li {
       font-size: var(--fs-lg);
       line-height: var(--lh-loose);
       color: rgba(255,255,255,.65);
-      margin-bottom: var(--s4);
+      padding-left: var(--s4);
+      border-left: 2px solid rgba(255,255,255,.18);
     }
-    .phil-inner p:last-child { margin-bottom: 0; }
 
     /* Visual Explorations */
     .exp-grid {
@@ -1443,10 +1451,11 @@
             <p class="section-label">Design Philosophy</p>
             <h2 id="phil-heading" class="section-title">Clarity. Momentum. Intention.</h2>
           </div>
-          <div class="fade-up" data-d="1">
-            <p>I believe the best digital products make complicated systems feel obvious. My work sits at the intersection of product design, human behavior, and emerging AI — with a focus on creating experiences that feel clear, motivating, and genuinely useful.</p>
-            <p>Whether I'm shaping an AI conversation, designing a platform workflow, or refining the visual language of a product, I care deeply about clarity, momentum, and helping people feel more confident in what comes next.</p>
-          </div>
+          <ul class="phil-list fade-up" data-d="1">
+            <li>Lead and own end-to-end new product design, ensuring solutions align with user needs and business goals.</li>
+            <li>Create brand new products and experiences that solve user needs in creative, delightful, and innovative ways — by deeply understanding user behaviors, motivations, and pain points, and advocating for user-centered design decisions.</li>
+            <li>Drive innovation by staying curious and informed about evolving design trends, technologies, and best practices, sharing learnings to elevate the team's collective expertise.</li>
+          </ul>
           <div style="margin-top: var(--s5);" class="fade-up" data-d="2">
             <a class="btn btn-ghost" style="border-color:rgba(255,255,255,.2); color:#fff;" href="/about">More About Bri →</a>
           </div>
