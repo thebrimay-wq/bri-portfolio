@@ -599,6 +599,13 @@
       color: var(--ink-3);
       white-space: nowrap;
     }
+    .marquee--dark {
+      background: var(--dark);
+      border-color: transparent;
+    }
+    .marquee--dark .marquee__track--disciplines span {
+      color: rgba(255,255,255,.32);
+    }
 
     /* Homepage case study cards grid */
     .cards-grid {
@@ -1140,8 +1147,9 @@
           <li><button class="nav__link" onclick="showPage('home')"    data-page="home">Home</button></li>
           <li><button class="nav__link" onclick="showPage('work')"    data-page="work">Work</button></li>
           <li><button class="nav__link" onclick="showPage('about')"   data-page="about">About</button></li>
+          <li><a class="nav__link" href="resume.html">Résumé</a></li>
           <li><button class="nav__link" onclick="showPage('contact')" data-page="contact">Contact</button></li>
-          <li><button class="nav__cta"  onclick="showPage('contact')">Let's Talk</button></li>
+          <li><button class="nav__cta"  onclick="showPage('contact')">Get in touch</button></li>
         </ul>
         <button class="nav__burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -1154,6 +1162,7 @@
       <button class="nav__link" onclick="showPage('home');closeMenu()"    data-page="home">Home</button>
       <button class="nav__link" onclick="showPage('work');closeMenu()"    data-page="work">Work</button>
       <button class="nav__link" onclick="showPage('about');closeMenu()"   data-page="about">About</button>
+      <a class="nav__link" href="resume.html">Résumé</a>
       <button class="nav__link" onclick="showPage('contact');closeMenu()" data-page="contact">Contact</button>
     </div>
   </header>
@@ -1197,22 +1206,26 @@
     <!-- Marquee -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Product Design</span><span>·</span>
-        <span>AI Experience</span><span>·</span>
-        <span>Creative Direction</span><span>·</span>
-        <span>Behavioral Design</span><span>·</span>
-        <span>UX Strategy</span><span>·</span>
-        <span>Financial Wellness</span><span>·</span>
-        <span>Conversational AI</span><span>·</span>
-        <span>Visual Systems</span><span>·</span>
-        <span>Product Design</span><span>·</span>
-        <span>AI Experience</span><span>·</span>
-        <span>Creative Direction</span><span>·</span>
-        <span>Behavioral Design</span><span>·</span>
-        <span>UX Strategy</span><span>·</span>
-        <span>Financial Wellness</span><span>·</span>
-        <span>Conversational AI</span><span>·</span>
-        <span>Visual Systems</span><span>·</span>
+        <span>Meta</span><span>·</span>
+        <span>NFL</span><span>·</span>
+        <span>Nestlé</span><span>·</span>
+        <span>Patagonia</span><span>·</span>
+        <span>JPMorgan Chase</span><span>·</span>
+        <span>McKinsey &amp; Co.</span><span>·</span>
+        <span>Comcast</span><span>·</span>
+        <span>General Mills</span><span>·</span>
+        <span>Financial Finesse</span><span>·</span>
+        <span>CKC Communications</span><span>·</span>
+        <span>Meta</span><span>·</span>
+        <span>NFL</span><span>·</span>
+        <span>Nestlé</span><span>·</span>
+        <span>Patagonia</span><span>·</span>
+        <span>JPMorgan Chase</span><span>·</span>
+        <span>McKinsey &amp; Co.</span><span>·</span>
+        <span>Comcast</span><span>·</span>
+        <span>General Mills</span><span>·</span>
+        <span>Financial Finesse</span><span>·</span>
+        <span>CKC Communications</span><span>·</span>
       </div>
     </div>
 
@@ -1679,6 +1692,36 @@
         <p class="page-hero__eyebrow fade-up">About</p>
         <h1 class="page-hero__title fade-up" data-d="1">Designer, director, and systems thinker.</h1>
         <p class="page-hero__desc fade-up" data-d="2">I design products that feel human, intentional, and genuinely useful — especially in complex spaces where clarity is hardest to achieve.</p>
+      </div>
+    </div>
+
+    <!-- Disciplines Marquee -->
+    <div class="marquee marquee--dark" aria-hidden="true">
+      <div class="marquee__track marquee__track--disciplines">
+        <span>Product Design</span><span>·</span>
+        <span>AI Experience Design</span><span>·</span>
+        <span>Creative Direction</span><span>·</span>
+        <span>UX Architecture</span><span>·</span>
+        <span>Conversational UX</span><span>·</span>
+        <span>Behavioral Design</span><span>·</span>
+        <span>Visual Systems</span><span>·</span>
+        <span>Design Strategy</span><span>·</span>
+        <span>User Research</span><span>·</span>
+        <span>Interaction Design</span><span>·</span>
+        <span>Vibe Coding</span><span>·</span>
+        <span>GitHub / Deployment</span><span>·</span>
+        <span>Product Design</span><span>·</span>
+        <span>AI Experience Design</span><span>·</span>
+        <span>Creative Direction</span><span>·</span>
+        <span>UX Architecture</span><span>·</span>
+        <span>Conversational UX</span><span>·</span>
+        <span>Behavioral Design</span><span>·</span>
+        <span>Visual Systems</span><span>·</span>
+        <span>Design Strategy</span><span>·</span>
+        <span>User Research</span><span>·</span>
+        <span>Interaction Design</span><span>·</span>
+        <span>Vibe Coding</span><span>·</span>
+        <span>GitHub / Deployment</span><span>·</span>
       </div>
     </div>
 
