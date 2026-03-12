@@ -607,11 +607,101 @@
     }
 
     /* Homepage case study cards grid */
-    .cards-grid {
+    .cs-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--s3);
+      gap: var(--s4);
     }
+    .cs-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      color: inherit;
+      text-decoration: none;
+      transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
+    }
+    .cs-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 32px 80px rgba(0,0,0,.10);
+      border-color: transparent;
+    }
+    .cs-card__thumb {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+    }
+    .cs-card__thumb--aimee    { background: linear-gradient(145deg, #0a1628 0%, #112044 55%, #1a3a6c 100%); }
+    .cs-card__thumb--hub      { background: linear-gradient(145deg, #0d1f14 0%, #163323 55%, #1e4a30 100%); }
+    .cs-card__thumb--benefits { background: linear-gradient(145deg, #17141f 0%, #251e35 55%, #2e2648 100%); }
+    .cs-card__thumb::before {
+      content: '';
+      position: absolute;
+      left: 28px; top: 28px;
+      width: 46%; height: 12px;
+      background: #fff; opacity: .18;
+      border-radius: 4px;
+    }
+    .cs-card__thumb::after {
+      content: '';
+      position: absolute;
+      left: 28px; top: 50px;
+      width: 30%; height: 8px;
+      background: #fff; opacity: .18;
+      border-radius: 4px;
+    }
+    .cs-card__eyebrow-tag {
+      position: absolute;
+      top: 14px; left: 14px;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: rgba(255,255,255,.92);
+      border-radius: 100px;
+      padding: 4px 10px;
+      backdrop-filter: blur(8px);
+    }
+    .cs-card__body {
+      padding: var(--s4) var(--s4) var(--s5);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .cs-card__title {
+      font-family: var(--font-serif);
+      font-size: var(--fs-h3);
+      font-weight: 300;
+      margin-bottom: var(--s2);
+    }
+    .cs-card__desc {
+      font-size: var(--fs-sm);
+      color: var(--ink-2);
+      line-height: var(--lh-loose);
+      flex: 1;
+      margin-bottom: var(--s3);
+    }
+    .cs-card__meta {
+      font-size: var(--fs-xs);
+      color: var(--ink-3);
+      margin-bottom: var(--s3);
+    }
+    .cs-card__cta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: var(--fs-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .cs-card__cta-arrow {
+      display: inline-block;
+      transition: transform var(--t-f);
+    }
+    .cs-card:hover .cs-card__cta-arrow { transform: translateX(5px); }
 
     /* Impact */
     .impact-grid {
@@ -1116,7 +1206,7 @@
       .nav__burger { display: flex; }
 
       .cap-grid       { grid-template-columns: 1fr; }
-      .cards-grid     { grid-template-columns: 1fr; }
+      .cs-grid        { grid-template-columns: 1fr; }
       .exp-grid       { grid-template-columns: 1fr; }
       .work-grid-3    { grid-template-columns: 1fr; }
       .process-steps  { grid-template-columns: 1fr; }
@@ -1236,56 +1326,44 @@
           <p class="section-desc">A focused selection of work built around clarity, momentum, and meaningful user action.</p>
         </div>
 
-        <div class="cards-grid fade-up" data-d="1">
+        <div class="cs-grid fade-up" data-d="1">
 
-          <a class="card" href="/work" aria-label="Case study: Aimee AI">
-            <div class="card__img">
-              <div class="ph"><span>Aimee AI Preview</span></div>
-              <span class="card__tag">AI Experience</span>
+          <a class="cs-card" href="/aimee-ai" aria-label="Case study: Aimee AI">
+            <div class="cs-card__thumb cs-card__thumb--aimee">
+              <div class="cs-card__thumb-overlay"></div>
+              <span class="cs-card__eyebrow-tag">AI Experience</span>
             </div>
-            <div class="card__body">
-              <h3 class="card__title">Aimee AI</h3>
-              <p class="card__desc">Designing a conversational AI coach that turns static financial education into personalized, motivating guidance.</p>
-              <div class="card__meta">
-                <span class="card__role">Product Design Lead</span>
-                <span class="card__dot">·</span>
-                <span class="card__co">Financial Finesse</span>
-              </div>
-              <span class="card__arrow">View case study →</span>
+            <div class="cs-card__body">
+              <h3 class="cs-card__title">Aimee AI</h3>
+              <p class="cs-card__desc">Designing a conversational AI coach that turns static financial education into personalized, motivating guidance.</p>
+              <p class="cs-card__meta">Product Design Lead · AI UX · Conversation Design</p>
+              <div class="cs-card__cta">View Case Study <span class="cs-card__cta-arrow">→</span></div>
             </div>
           </a>
 
-          <a class="card" href="/work" aria-label="Case study: Financial Finesse Hub">
-            <div class="card__img">
-              <div class="ph"><span>Hub Dashboard Preview</span></div>
-              <span class="card__tag">Platform Design</span>
+          <a class="cs-card" href="/work/hub" aria-label="Case study: Financial Finesse Hub">
+            <div class="cs-card__thumb cs-card__thumb--hub">
+              <div class="cs-card__thumb-overlay"></div>
+              <span class="cs-card__eyebrow-tag">Platform Design</span>
             </div>
-            <div class="card__body">
-              <h3 class="card__title">Financial Finesse Hub</h3>
-              <p class="card__desc">Reimagining a financial wellness platform to improve onboarding, engagement, and clarity across complex user journeys.</p>
-              <div class="card__meta">
-                <span class="card__role">Lead Product Designer</span>
-                <span class="card__dot">·</span>
-                <span class="card__co">Financial Finesse</span>
-              </div>
-              <span class="card__arrow">View case study →</span>
+            <div class="cs-card__body">
+              <h3 class="cs-card__title">Financial Finesse Hub</h3>
+              <p class="cs-card__desc">Reimagining a financial wellness platform to improve onboarding, engagement, and clarity across complex user journeys.</p>
+              <p class="cs-card__meta">Lead Product Designer · UX Strategy · Behavioral Design</p>
+              <div class="cs-card__cta">View Case Study <span class="cs-card__cta-arrow">→</span></div>
             </div>
           </a>
 
-          <a class="card" href="/work" aria-label="Case study: Financial Tools">
-            <div class="card__img">
-              <div class="ph"><span>Calculator / Tool Preview</span></div>
-              <span class="card__tag">Behavioral Design</span>
+          <a class="cs-card" href="/work/smart-benefits" aria-label="Case study: Smart Benefits">
+            <div class="cs-card__thumb cs-card__thumb--benefits">
+              <div class="cs-card__thumb-overlay"></div>
+              <span class="cs-card__eyebrow-tag">Benefits Platform</span>
             </div>
-            <div class="card__body">
-              <h3 class="card__title">Financial Tools &amp; Behavioral Design</h3>
-              <p class="card__desc">Creating calculators, score systems, and decision-support experiences that help people take meaningful financial action.</p>
-              <div class="card__meta">
-                <span class="card__role">Product Designer / Creative Lead</span>
-                <span class="card__dot">·</span>
-                <span class="card__co">Financial Finesse</span>
-              </div>
-              <span class="card__arrow">View case study →</span>
+            <div class="cs-card__body">
+              <h3 class="cs-card__title">Smart Benefits</h3>
+              <p class="cs-card__desc">Designing an AI-powered benefits experience that helps employees understand and use complex workplace benefits with clarity and confidence.</p>
+              <p class="cs-card__meta">Product Design · AI Systems · Employee Experience</p>
+              <div class="cs-card__cta">View Case Study <span class="cs-card__cta-arrow">→</span></div>
             </div>
           </a>
 

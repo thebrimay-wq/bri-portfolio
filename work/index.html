@@ -742,7 +742,7 @@
     .cta-links { display: flex; gap: var(--s2); flex-wrap: wrap; }
 
     /* ============================================================
-       PAGE: WORK
+       PAGE: WORK — INTRO
     ============================================================ */
     .page-hero {
       padding-top: calc(var(--nav-h) + var(--s7));
@@ -773,53 +773,160 @@
       max-width: 520px;
     }
 
-    .work-grid-3 {
+    /* ============================================================
+       PAGE: WORK — CASE STUDY CARDS
+    ============================================================ */
+    .cs-section {
+      padding: var(--s8) 0;
+      background: var(--white);
+    }
+    .cs-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--s3);
+      gap: var(--s4);
     }
-    .work-grid-featured {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr;
-      gap: var(--s3);
-      margin-bottom: var(--s3);
-    }
-    .work-grid-featured .card__img { aspect-ratio: 16/9; }
-
-    /* Process section on work page */
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--s3);
-      counter-reset: step;
-    }
-    .process-step {
-      counter-increment: step;
-      padding: var(--s4);
+    .cs-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
       border: 1px solid var(--border);
-      border-radius: var(--r-md);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      color: inherit;
+      text-decoration: none;
+      transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
+    }
+    .cs-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 32px 80px rgba(0,0,0,.10);
+      border-color: transparent;
+    }
+    .cs-card__thumb {
       position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
     }
-    .process-step::before {
-      content: "0" counter(step);
-      font-family: var(--font-serif);
-      font-size: 36px;
-      font-weight: 200;
-      color: var(--border);
-      display: block;
-      margin-bottom: var(--s2);
-      line-height: 1;
+    .cs-card__thumb--aimee {
+      background: linear-gradient(145deg, #0a1628 0%, #112044 55%, #1a3a6c 100%);
     }
-    .process-step h3 {
-      font-size: var(--fs-sm);
+    .cs-card__thumb--hub {
+      background: linear-gradient(145deg, #0d1f14 0%, #163323 55%, #1e4a30 100%);
+    }
+    .cs-card__thumb--benefits {
+      background: linear-gradient(145deg, #17141f 0%, #251e35 55%, #2e2648 100%);
+    }
+    /* Decorative product-UI suggestion lines */
+    .cs-card__thumb::before,
+    .cs-card__thumb::after {
+      content: '';
+      position: absolute;
+      border-radius: 4px;
+      opacity: .18;
+    }
+    .cs-card__thumb::before {
+      left: 28px; top: 28px;
+      width: 46%; height: 12px;
+      background: #fff;
+    }
+    .cs-card__thumb::after {
+      left: 28px; top: 50px;
+      width: 30%; height: 8px;
+      background: #fff;
+    }
+    .cs-card__thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15,15,14,0);
+      transition: background var(--t-b);
+    }
+    .cs-card:hover .cs-card__thumb-overlay {
+      background: rgba(15,15,14,.08);
+    }
+    .cs-card__eyebrow-tag {
+      position: absolute;
+      top: 14px; left: 14px;
+      font-size: 10px;
       font-weight: 600;
-      margin-bottom: var(--s1);
-      letter-spacing: -.01em;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,255,255,.3);
+      padding: 4px 10px;
+      border-radius: 100px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
-    .process-step p {
-      font-size: var(--fs-xs);
+    .cs-card__body {
+      padding: var(--s4) var(--s4) var(--s5);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .cs-card__title {
+      font-family: var(--font-serif);
+      font-size: var(--fs-h3);
+      font-weight: 300;
+      line-height: var(--lh-snug);
+      letter-spacing: -.01em;
+      margin-bottom: var(--s2);
+      color: var(--ink);
+    }
+    .cs-card__desc {
+      font-size: var(--fs-sm);
       color: var(--ink-2);
       line-height: var(--lh-loose);
+      flex: 1;
+      margin-bottom: var(--s3);
+    }
+    .cs-card__meta {
+      font-size: var(--fs-xs);
+      color: var(--ink-3);
+      line-height: var(--lh-snug);
+      margin-bottom: var(--s3);
+      letter-spacing: .01em;
+    }
+    .cs-card__cta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: var(--fs-xs);
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .cs-card__cta-arrow {
+      display: inline-block;
+      transition: transform var(--t-f);
+    }
+    .cs-card:hover .cs-card__cta-arrow {
+      transform: translateX(5px);
+    }
+
+    /* ============================================================
+       PAGE: WORK — BOTTOM CTA
+    ============================================================ */
+    .work-bottom-cta {
+      padding: var(--s8) 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      background: var(--bg);
+    }
+    .work-bottom-cta__headline {
+      font-family: var(--font-serif);
+      font-size: var(--fs-h2);
+      font-weight: 300;
+      line-height: var(--lh-snug);
+      letter-spacing: -.02em;
+      margin-bottom: var(--s5);
+      color: var(--ink);
+    }
+    .work-bottom-cta__links {
+      display: flex;
+      gap: var(--s2);
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     /* ============================================================
@@ -1090,20 +1197,7 @@
        RESPONSIVE
     ============================================================ */
     @media (max-width: 960px) {
-      .hero__grid         { grid-template-columns: 1fr; }
-      .hero__visual       { display: none; }
-      .hero__sub          { max-width: 100%; }
-      .cap-grid           { grid-template-columns: 1fr 1fr; }
-      .exp-grid           { grid-template-columns: 1fr 1fr; }
-      .work-grid-3        { grid-template-columns: 1fr 1fr; }
-      .work-grid-featured { grid-template-columns: 1fr; }
-      .process-steps      { grid-template-columns: 1fr 1fr; }
-      .about-grid         { grid-template-columns: 1fr; }
-      .about-visual       { position: static; }
-      .about-img          { max-width: 360px; }
-      .contact-grid       { grid-template-columns: 1fr; }
-      .values-grid        { grid-template-columns: 1fr 1fr; }
-      .impact-grid        { grid-template-columns: 1fr; }
+      .cs-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
@@ -1112,23 +1206,15 @@
         --s7: 56px;
         --s6: 48px;
       }
-      .nav__links { display: none; }
+      .nav__links  { display: none; }
       .nav__burger { display: flex; }
 
-      .cap-grid       { grid-template-columns: 1fr; }
-      .cards-grid     { grid-template-columns: 1fr; }
-      .exp-grid       { grid-template-columns: 1fr; }
-      .work-grid-3    { grid-template-columns: 1fr; }
-      .process-steps  { grid-template-columns: 1fr; }
-      .values-grid    { grid-template-columns: 1fr; }
-      .skills-list    { grid-template-columns: 1fr; }
-      .things-grid    { grid-template-columns: 1fr; }
-      .exp-item       { grid-template-columns: 1fr; gap: var(--s1); }
+      .cs-grid { grid-template-columns: 1fr; }
 
-      .footer__inner  { flex-direction: column; gap: var(--s4); }
-      .footer__nav    { gap: var(--s3); }
+      .work-bottom-cta__links { flex-direction: column; align-items: center; }
 
-      .cta-links      { flex-direction: column; }
+      .footer__inner { flex-direction: column; gap: var(--s4); }
+      .footer__nav   { gap: var(--s3); }
     }
   </style>
 </head>
@@ -1170,264 +1256,78 @@
 
   <main>
 
+    <!-- ── INTRO ── -->
     <div class="page-hero">
       <div class="container">
         <p class="page-hero__eyebrow fade-up">Selected Work</p>
         <h1 class="page-hero__title fade-up" data-d="1">Product, AI &amp; behavioral design.</h1>
-        <p class="page-hero__desc fade-up" data-d="2">A selection of work focused on AI, financial wellness, and human-centered digital product design.</p>
+        <p class="page-hero__desc fade-up" data-d="2">A selection of product design work across AI, financial wellness, and behavior-driven digital experiences.</p>
       </div>
     </div>
 
-    <!-- Featured: Aimee AI -->
-    <section class="section section--white" aria-labelledby="aimee-heading">
+    <!-- ── CASE STUDIES ── -->
+    <section class="cs-section" aria-label="Featured case studies">
       <div class="container">
-        <div class="section-hdr fade-up">
-          <p class="section-label">Case Study 01 — AI Experience</p>
-          <h2 id="aimee-heading" class="section-title">Aimee AI</h2>
-          <p class="section-desc">Designing a conversational AI coach that turns static financial education into personalized, motivating guidance.</p>
-        </div>
+        <div class="cs-grid">
 
-        <div class="work-grid-featured fade-up" data-d="1">
-          <article class="card" tabindex="0" aria-label="Aimee AI main case study">
-            <div class="card__img" style="aspect-ratio:16/9;">
-              <div class="ph"><span>Aimee AI — Primary Interface</span></div>
-              <span class="card__tag">AI Experience</span>
+          <!-- Card 1: Aimee AI -->
+          <a class="cs-card fade-up" href="/aimee-ai" aria-label="Aimee AI — view case study">
+            <div class="cs-card__thumb cs-card__thumb--aimee">
+              <div class="cs-card__thumb-overlay"></div>
+              <span class="cs-card__eyebrow-tag">AI Experience</span>
             </div>
-            <div class="card__body">
-              <h3 class="card__title">Conversational coaching at scale</h3>
-              <p class="card__desc">Reimagining how employees access financial guidance — moving from static content to a personalized AI coach that adapts to individual behavior and goals.</p>
-              <div class="card__meta">
-                <span class="card__role">Product Design Lead</span>
-                <span class="card__dot">·</span>
-                <span class="card__co">Financial Finesse</span>
-              </div>
-              <span class="card__arrow">Case study coming soon</span>
+            <div class="cs-card__body">
+              <h2 class="cs-card__title">Aimee AI</h2>
+              <p class="cs-card__desc">Designing a conversational AI coach that turns static financial education into personalized, motivating guidance.</p>
+              <p class="cs-card__meta">Product Design Lead · AI UX · Conversation Design</p>
+              <div class="cs-card__cta">View Case Study <span class="cs-card__cta-arrow">→</span></div>
             </div>
-          </article>
-          <article class="card" tabindex="0" aria-label="Aimee AI conversation design">
-            <div class="card__img" style="aspect-ratio:16/9;">
-              <div class="ph"><span>Aimee AI — Conversation Flow</span></div>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Conversation design &amp; AI personality</h3>
-              <p class="card__desc">Crafting the tone, trust architecture, and response frameworks that make Aimee feel genuinely helpful — not robotic.</p>
-              <div class="card__meta">
-                <span class="card__role">Conversational UX</span>
-                <span class="card__dot">·</span>
-                <span class="card__co">AI Personality Design</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+          </a>
 
-    <!-- Financial Finesse Hub -->
-    <section class="section section--subtle" aria-labelledby="hub-heading">
-      <div class="container">
-        <div class="section-hdr fade-up">
-          <p class="section-label">Case Study 02 — Platform Design</p>
-          <h2 id="hub-heading" class="section-title">Financial Finesse Hub</h2>
-          <p class="section-desc">Reimagining a financial wellness platform to improve onboarding, engagement, and clarity across complex user journeys.</p>
-        </div>
-        <div class="work-grid-3 fade-up" data-d="1">
-          <article class="card" tabindex="0" aria-label="Hub onboarding">
-            <div class="card__img">
-              <div class="ph"><span>Hub — Onboarding Flow</span></div>
-              <span class="card__tag">Platform Design</span>
+          <!-- Card 2: Financial Finesse Hub -->
+          <a class="cs-card fade-up" href="/work/hub" data-d="1" aria-label="Financial Finesse Hub — view case study">
+            <div class="cs-card__thumb cs-card__thumb--hub">
+              <div class="cs-card__thumb-overlay"></div>
+              <span class="cs-card__eyebrow-tag">Platform Design</span>
             </div>
-            <div class="card__body">
-              <h3 class="card__title">Onboarding redesign</h3>
-              <p class="card__desc">Simplifying the entry experience so employees understand their financial wellness picture within their first session.</p>
-              <div class="card__meta">
-                <span class="card__role">Lead Product Designer</span>
-              </div>
+            <div class="cs-card__body">
+              <h2 class="cs-card__title">Financial Finesse Hub</h2>
+              <p class="cs-card__desc">Reimagining a financial wellness platform to improve onboarding, engagement, and clarity across complex user journeys.</p>
+              <p class="cs-card__meta">Lead Product Designer · UX Strategy · Behavioral Design</p>
+              <div class="cs-card__cta">View Case Study <span class="cs-card__cta-arrow">→</span></div>
             </div>
-          </article>
-          <article class="card" tabindex="0" aria-label="Hub dashboard">
-            <div class="card__img">
-              <div class="ph"><span>Hub — Dashboard</span></div>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Dashboard &amp; data clarity</h3>
-              <p class="card__desc">Turning complex financial data into a clear, actionable snapshot that motivates rather than overwhelms.</p>
-              <div class="card__meta">
-                <span class="card__role">UX Architecture</span>
-              </div>
-            </div>
-          </article>
-          <article class="card" tabindex="0" aria-label="Hub engagement">
-            <div class="card__img">
-              <div class="ph"><span>Hub — Engagement Patterns</span></div>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Engagement &amp; retention</h3>
-              <p class="card__desc">Designing behavioral loops and content patterns that bring users back and help them make progress over time.</p>
-              <div class="card__meta">
-                <span class="card__role">Behavioral Design</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+          </a>
 
-    <!-- Financial Tools -->
-    <section class="section section--white" aria-labelledby="tools-heading">
-      <div class="container">
-        <div class="section-hdr fade-up">
-          <p class="section-label">Case Study 03 — Behavioral Design</p>
-          <h2 id="tools-heading" class="section-title">Financial Tools &amp; Behavioral Design</h2>
-          <p class="section-desc">Creating calculators, score systems, and decision-support experiences that help people take meaningful financial action.</p>
-        </div>
-        <div class="work-grid-3 fade-up" data-d="1">
-          <article class="card" tabindex="0" aria-label="Calculator tool">
-            <div class="card__img">
-              <div class="ph"><span>Calculator Tool</span></div>
-              <span class="card__tag">Behavioral Design</span>
+          <!-- Card 3: Smart Benefits -->
+          <a class="cs-card fade-up" href="/work/smart-benefits" data-d="2" aria-label="Smart Benefits — view case study">
+            <div class="cs-card__thumb cs-card__thumb--benefits">
+              <div class="cs-card__thumb-overlay"></div>
+              <span class="cs-card__eyebrow-tag">Benefits Platform</span>
             </div>
-            <div class="card__body">
-              <h3 class="card__title">Interactive calculators</h3>
-              <p class="card__desc">Tools that translate abstract numbers into personal, actionable insight — helping users see the real impact of their choices.</p>
-              <div class="card__meta">
-                <span class="card__role">Product Designer / Creative Lead</span>
-              </div>
+            <div class="cs-card__body">
+              <h2 class="cs-card__title">Smart Benefits</h2>
+              <p class="cs-card__desc">Designing an AI-powered benefits experience that helps employees understand and use complex workplace benefits with clarity and confidence.</p>
+              <p class="cs-card__meta">Product Design · AI Systems · Employee Experience</p>
+              <div class="cs-card__cta">View Case Study <span class="cs-card__cta-arrow">→</span></div>
             </div>
-          </article>
-          <article class="card" tabindex="0" aria-label="Score system">
-            <div class="card__img">
-              <div class="ph"><span>Score System</span></div>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Financial wellness score</h3>
-              <p class="card__desc">A score system that makes financial health measurable, visible, and motivating — not a source of anxiety.</p>
-              <div class="card__meta">
-                <span class="card__role">UX &amp; Visual Design</span>
-              </div>
-            </div>
-          </article>
-          <article class="card" tabindex="0" aria-label="Decision support">
-            <div class="card__img">
-              <div class="ph"><span>Decision Support Tool</span></div>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Decision-support experiences</h3>
-              <p class="card__desc">Guided flows that reduce cognitive load and help users make confident financial decisions at the right moment.</p>
-              <div class="card__meta">
-                <span class="card__role">Interaction Design</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process -->
-    <section class="section section--subtle" aria-labelledby="process-heading">
-      <div class="container">
-        <div class="section-hdr fade-up">
-          <p class="section-label">How I Work</p>
-          <h2 id="process-heading" class="section-title">Process &amp; approach.</h2>
-        </div>
-        <div class="process-steps fade-up" data-d="1">
-          <div class="process-step">
-            <h3>Discover</h3>
-            <p>Research, user interviews, competitive review, and behavioral mapping to understand the real problem before designing a solution.</p>
-          </div>
-          <div class="process-step">
-            <h3>Define</h3>
-            <p>Synthesizing findings into clear problem frames, user journeys, and design principles that keep the team aligned on what matters.</p>
-          </div>
-          <div class="process-step">
-            <h3>Design</h3>
-            <p>High-fidelity, polished work from day one — flows, components, interactions, and a visual language that earns trust.</p>
-          </div>
-          <div class="process-step">
-            <h3>Deliver</h3>
-            <p>Close collaboration with engineering to ship with quality, followed by measurement and iteration to keep improving.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Other Projects -->
-    <section class="section section--subtle" aria-labelledby="other-heading">
-      <div class="container">
-        <div class="section-hdr fade-up">
-          <p class="section-label">Other Projects</p>
-          <h2 id="other-heading" class="section-title">Building beyond the day job.</h2>
-          <p class="section-desc">Independent projects designed and built using AI-assisted development — from concept to deployed site.</p>
-        </div>
-        <div class="work-grid-3 fade-up" data-d="1">
-
-          <article class="card" tabindex="0" aria-label="Real estate website project">
-            <div class="card__img">
-              <div class="ph"><span>Real Estate Website Preview</span></div>
-              <span class="card__tag">Vibe Coded</span>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Real Estate Website</h3>
-              <p class="card__desc">A full real estate listing site designed and built end-to-end using AI-assisted development. Deployed to GitHub Pages — no traditional dev team required.</p>
-              <div class="card__meta">
-                <span class="card__role">Design &amp; Build</span>
-                <span class="card__dot">·</span>
-                <span class="card__co">Claude, ChatGPT &amp; Gemini</span>
-              </div>
-              <span class="card__arrow">Live on GitHub →</span>
-            </div>
-          </article>
-
-          <article class="card" tabindex="0" aria-label="This portfolio project">
-            <div class="card__img">
-              <div class="ph"><span>Portfolio Site Preview</span></div>
-              <span class="card__tag">Vibe Coded</span>
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">This Portfolio</h3>
-              <p class="card__desc">Designed and built this multi-page portfolio site using AI-assisted development — custom layout, responsive design, and GitHub deployment without a traditional engineering handoff.</p>
-              <div class="card__meta">
-                <span class="card__role">Design &amp; Build</span>
-                <span class="card__dot">·</span>
-                <span class="card__co">Claude, ChatGPT &amp; Gemini</span>
-              </div>
-              <span class="card__arrow">You're looking at it →</span>
-            </div>
-          </article>
+          </a>
 
         </div>
       </div>
     </section>
 
-    <!-- Visual Explorations -->
-    <section class="section section--white" aria-labelledby="exp2-heading">
+    <!-- ── BOTTOM CTA ── -->
+    <section class="work-bottom-cta" aria-label="Explore more">
       <div class="container">
-        <div class="section-hdr fade-up">
-          <p class="section-label">Visual Explorations</p>
-          <h2 id="exp2-heading" class="section-title">Craft &amp; concept work.</h2>
-          <p class="section-desc">Interface studies and visual system experiments beyond client work.</p>
-        </div>
-        <div class="exp-grid fade-up" data-d="1">
-          <figure class="exp-tile">
-            <div class="exp-img"><div class="ph"><span>Exploration Image</span></div></div>
-            <figcaption class="exp-caption">Onboarding concept study</figcaption>
-          </figure>
-          <figure class="exp-tile">
-            <div class="exp-img"><div class="ph"><span>Exploration Image</span></div></div>
-            <figcaption class="exp-caption">Mobile dashboard exploration</figcaption>
-          </figure>
-          <figure class="exp-tile">
-            <div class="exp-img"><div class="ph"><span>Exploration Image</span></div></div>
-            <figcaption class="exp-caption">Interaction and visual system concept</figcaption>
-          </figure>
+        <h2 class="work-bottom-cta__headline">Want to see more?</h2>
+        <div class="work-bottom-cta__links">
+          <a class="btn btn-ghost" href="/resume">View Résumé</a>
+          <a class="btn btn-ghost" href="/about">About Me</a>
+          <a class="btn btn-primary" href="/contact">Get in Touch</a>
         </div>
       </div>
     </section>
 
-
-
-  <!-- ══════════════════════════════════════════════════════════
-       PAGE: ABOUT
-  ══════════════════════════════════════════════════════════ -->
   </main>
 
   <footer class="footer" role="contentinfo">
