@@ -580,7 +580,7 @@
     .marquee {
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      background: var(--white);
+      background: var(--bg);
       overflow: hidden;
       padding: 18px 0;
     }
@@ -843,6 +843,20 @@
       margin-bottom: var(--s3);
     }
     .about-img .ph { border: none; }
+    .about-img { position: relative; }
+    .about-img__hover {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(100%);
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+    .about-img:hover .about-img__hover { opacity: 1; }
     .about-caption {
       font-size: var(--fs-xs);
       color: var(--ink-3);
@@ -1179,7 +1193,7 @@
     </div>
 
     <!-- Disciplines Marquee -->
-    <div class="marquee marquee--dark" aria-hidden="true">
+    <div class="marquee" aria-hidden="true">
       <div class="marquee__track marquee__track--disciplines">
         <span>Product Design</span><span>·</span>
         <span>AI Experience Design</span><span>·</span>
@@ -1216,7 +1230,8 @@
           <!-- Sticky visual -->
           <div class="about-visual fade-up">
             <div class="about-img">
-              <div class="ph" style="height:100%;"><span>Bri May — Portrait</span></div>
+              <img src="/images/bri-portrait.jpg" alt="Bri May — Product Designer &amp; Creative Director" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
+              <img src="/images/bri-wink.jpg" alt="" class="about-img__hover" />
             </div>
             <p class="about-caption">Product Designer &amp; Creative Director<br>Based in California</p>
           </div>
