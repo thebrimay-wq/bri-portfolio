@@ -497,17 +497,22 @@
 
     /* Hero */
     .hero {
-      padding-top: calc(var(--nav-h) + var(--s8));
-      padding-bottom: var(--s7);
       min-height: 100svh;
       display: flex;
-      align-items: center;
+      align-items: stretch;
     }
     .hero__grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: var(--s6);
-      align-items: center;
+      gap: 0;
+      align-items: stretch;
+      width: 100%;
+    }
+    .hero__text {
+      padding: calc(var(--nav-h) + var(--s8)) var(--s6) var(--s7) max(var(--s5), calc((100vw - var(--max-w)) / 2 + var(--s5)));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .hero__eyebrow {
       font-size: var(--fs-xxs);
@@ -547,7 +552,7 @@
     }
     .hero__visual {
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
     }
     .hero__visual-wrap {
@@ -1270,7 +1275,6 @@
 
     <!-- Hero -->
     <section class="hero" aria-labelledby="hero-headline">
-      <div class="container">
         <div class="hero__grid">
           <div class="hero__text">
             <p class="hero__eyebrow fade-up">Product Designer &amp; Creative Director</p>
@@ -1296,7 +1300,6 @@
             </div>
           </div>
         </div>
-      </div>
     </section>
 
     <!-- Marquee -->
