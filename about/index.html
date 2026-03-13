@@ -759,7 +759,7 @@
     }
     .page-hero__title {
       font-family: var(--font-serif);
-      font-size: var(--fs-h1);
+      font-size: var(--fs-hero);
       font-weight: 300;
       line-height: var(--lh-tight);
       letter-spacing: -.025em;
@@ -965,6 +965,28 @@
       line-height: var(--lh-loose);
     }
 
+    /* Outside of Work */
+    .outside-grid {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: var(--s6);
+      align-items: start;
+    }
+    .outside-headline {
+      font-family: var(--font-serif);
+      font-size: var(--fs-h3);
+      font-weight: 300;
+      line-height: var(--lh-snug);
+      letter-spacing: -.02em;
+      margin-bottom: var(--s2);
+    }
+    .outside-subline {
+      font-size: var(--fs-sm);
+      color: var(--ink-3);
+      font-style: italic;
+      line-height: var(--lh-loose);
+    }
+
     /* ============================================================
        PAGE: CONTACT
     ============================================================ */
@@ -1117,6 +1139,7 @@
       .about-img          { max-width: 360px; }
       .contact-grid       { grid-template-columns: 1fr; }
       .values-grid        { grid-template-columns: 1fr 1fr; }
+      .outside-grid       { grid-template-columns: 1fr; gap: var(--s4); }
       .impact-grid        { grid-template-columns: 1fr; }
     }
 
@@ -1342,6 +1365,25 @@
             <p class="value-title">Craft at every scale</p>
             <p class="value-body">The details matter — even in enterprise software, even in financial tools. Polish signals respect for the person using it.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outside of Work -->
+    <section class="section section--white" aria-labelledby="outside-heading">
+      <div class="container">
+        <div class="outside-grid">
+
+          <div class="fade-up">
+            <h2 id="outside-heading" class="outside-headline">Outside of Work</h2>
+            <p class="outside-subline">The things that keep me curious and grounded.</p>
+          </div>
+
+          <div class="fade-up" data-d="1">
+            <p class="about-body">Before design, I was a Division I soccer player, and that competitive, team-first mindset still shapes how I work today. I still play every weekend and love the rhythm of the game. I'm drawn to experiences that make life feel a little bigger — like scuba diving with whale sharks or cage diving with great whites.</p>
+            <p class="about-body">Traveling is one of my favorite ways to explore the world, though home with my family and my son is just as meaningful. At the center of it all are the relationships in my life — strong friendships are one of the things I value most.</p>
+          </div>
+
         </div>
       </div>
     </section>
