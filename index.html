@@ -781,6 +781,28 @@
       line-height: var(--lh-loose);
     }
 
+    /* Outside of Work */
+    .outside-grid {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: var(--s6);
+      align-items: start;
+    }
+    .outside-headline {
+      font-family: var(--font-serif);
+      font-size: var(--fs-h3);
+      font-weight: 300;
+      line-height: var(--lh-snug);
+      letter-spacing: -.02em;
+      margin-bottom: var(--s2);
+    }
+    .outside-subline {
+      font-size: var(--fs-sm);
+      color: var(--ink-3);
+      font-style: italic;
+      line-height: var(--lh-loose);
+    }
+
     /* Philosophy */
     .phil-inner { max-width: var(--read-w); }
     .phil-list {
@@ -1207,6 +1229,7 @@
       .contact-grid       { grid-template-columns: 1fr; }
       .values-grid        { grid-template-columns: 1fr 1fr; }
       .impact-grid        { grid-template-columns: 1fr; }
+      .outside-grid       { grid-template-columns: 1fr; gap: var(--s4); }
     }
 
     @media (max-width: 640px) {
@@ -1443,6 +1466,24 @@
             <p class="cap-title">Design Strategy</p>
             <p class="cap-body">Experience positioning, design systems, product thinking, user research, and cross-functional leadership</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Outside of Work -->
+    <section class="section section--subtle" aria-labelledby="outside-home-heading">
+      <div class="container">
+        <div class="outside-grid">
+
+          <div class="fade-up">
+            <h2 id="outside-home-heading" class="outside-headline">Outside of Work</h2>
+            <p class="outside-subline">A few things that keep me curious and grounded.</p>
+          </div>
+
+          <div class="fade-up" data-d="1">
+            <p class="section-desc" style="margin:0;">Before design, I was a Division I soccer player — and that competitive, team-first mindset has never left me. I still play every weekend. Outside the studio, I'm drawn to experiences that make the world feel bigger: scuba diving with whale sharks, cage diving with great whites, traveling to places that shift your perspective. But what grounds me most is closer to home — my son, my family, and the friendships that have lasted.</p>
+          </div>
+
         </div>
       </div>
     </section>
