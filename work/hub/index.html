@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aimee AI Case Study — Bri May. Redesigning a static Q&A tool into a CFP-backed AI coach reaching over 1 million employees." />
-  <title>Aimee AI — Case Study | Bri May</title>
+  <meta name="description" content="Financial Finesse Hub Case Study — Bri May. Redesigning a financial wellness platform from the ground up." />
+  <title>Financial Finesse Hub — Case Study | Bri May</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet" />
@@ -87,6 +87,8 @@
     .nav__link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--accent); transition: width var(--t-f); }
     .nav__link:hover { color: var(--ink); }
     .nav__link:hover::after { width: 100%; }
+    .nav__link.active { color: var(--ink); }
+    .nav__link.active::after { width: 100%; }
     .nav__cta { font-size: var(--fs-xs); font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--ink); padding: 9px 18px; border: 1.5px solid var(--border); border-radius: var(--r-sm); transition: border-color var(--t-f); }
     .nav__cta:hover { border-color: var(--ink); }
 
@@ -96,6 +98,7 @@
     .nav__item--has-dropdown:hover .nav__dropdown { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
     .nav__dropdown-link { display: block; padding: 8px 12px; font-size: var(--fs-xs); font-weight: 500; letter-spacing: .03em; color: var(--ink-2); border-radius: var(--r-sm); transition: color var(--t-f), background var(--t-f); }
     .nav__dropdown-link:hover { color: var(--ink); background: var(--subtle); }
+
     .nav__burger { display: none; flex-direction: column; gap: 5px; width: 32px; height: 32px; justify-content: center; padding: 2px; }
     .nav__burger span { display: block; width: 100%; height: 1.5px; background: var(--ink); border-radius: 2px; transition: transform var(--t-f), opacity var(--t-f); }
     .nav__burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
@@ -134,66 +137,42 @@
     .footer__link:hover { color: var(--white); }
     .footer__copy { font-size: var(--fs-xxs); color: rgba(255,255,255,.2); letter-spacing: .04em; }
 
-    /* ── HERO ── */
+    /* HERO */
     .cs-hero { padding-top: calc(var(--nav-h) + var(--s7)); padding-bottom: var(--s7); border-bottom: 1px solid var(--border); }
     .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: var(--fs-xs); font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); transition: color var(--t-f); margin-bottom: var(--s5); }
     .back-link:hover { color: var(--ink); }
     .cs-hero__eyebrow { font-size: var(--fs-xxs); font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--s2); }
     .cs-hero__title { font-family: var(--font-serif); font-size: var(--fs-hero); font-weight: 300; line-height: var(--lh-tight); letter-spacing: -.025em; margin-bottom: var(--s3); max-width: 760px; }
-
-    /* One-line outcome statement */
-    .cs-hero__outcome {
-      display: block;
-      font-family: var(--font-sans);
-      font-size: clamp(18px, 2vw, 24px);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--ink-2);
-      margin-bottom: var(--s4);
-      padding-left: var(--s4);
-      border-left: 2px solid var(--accent);
-      line-height: var(--lh-snug);
-      max-width: 620px;
-    }
-
+    .cs-hero__outcome { display: block; font-family: var(--font-sans); font-size: clamp(18px, 2vw, 24px); font-weight: 300; font-style: italic; color: var(--ink-2); margin-bottom: var(--s4); padding-left: var(--s4); border-left: 2px solid var(--accent); line-height: var(--lh-snug); max-width: 620px; }
     .cs-hero__sub { font-size: var(--fs-lg); color: var(--ink-2); line-height: var(--lh-loose); max-width: 580px; margin-bottom: var(--s6); }
-
-    /* Meta strip */
     .cs-meta { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border); align-items: start; }
     .cs-meta__item { padding: var(--s3) var(--s2); border-right: 1px solid var(--border); text-align: center; }
     .cs-meta__item:last-child { border-right: none; text-align: center; }
     .cs-meta__label { font-size: var(--fs-xxs); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
     .cs-meta__value { font-size: var(--fs-sm); font-weight: 500; color: var(--ink); line-height: var(--lh-snug); }
 
-    /* ── BEFORE / AFTER ── */
-    /* ── FLOATING IMAGES ── */
+    /* FLOATING IMAGES */
     .float-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(var(--s5), 5vw, var(--s7)); margin-top: var(--s6); align-items: start; }
     .float-item { display: flex; flex-direction: column; gap: var(--s3); }
     .float-item--offset { margin-top: clamp(24px, 4vw, 56px); }
     .float-label { display: inline-flex; width: fit-content; font-size: var(--fs-xxs); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 5px 13px; border-radius: 100px; }
     .float-label--before { background: var(--subtle); color: var(--ink-3); border: 1px solid var(--border); }
     .float-label--after  { background: rgba(26,86,219,.08); color: var(--accent); border: 1px solid rgba(26,86,219,.2); }
-    .float-img {
-      width: 100%;
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      aspect-ratio: 9/16;
-      transition: transform var(--t-s);
-    }
+    .float-img { width: 100%; border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 9/16; transition: transform var(--t-s); }
     .float-img:hover { transform: translateY(-4px); }
     .float-img .ph { border: none; border-radius: 0; background: var(--subtle); }
     .float-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .float-caption { font-size: var(--fs-xs); color: var(--ink-3); line-height: var(--lh-loose); }
     .float-caption strong { color: var(--ink-2); font-weight: 500; }
 
-    /* ── STAT ROW ── */
+    /* STAT ROW */
     .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s3); margin-top: var(--s6); }
     .stat-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg); padding: var(--s4) var(--s4) var(--s5); transition: transform var(--t-b), box-shadow var(--t-b); }
     .stat-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,.06); }
     .stat-card__num { font-family: var(--font-serif); font-size: clamp(36px, 5vw, 56px); font-weight: 200; color: var(--ink); line-height: 1; letter-spacing: -.03em; margin-bottom: var(--s1); }
     .stat-card__label { font-size: var(--fs-xs); font-weight: 500; color: var(--ink-2); line-height: var(--lh-snug); }
 
-    /* ── WHAT / WHY GRID ── */
+    /* WHAT / WHY GRID */
     .what-why { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); margin-top: var(--s5); }
     .what-why__block { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg); padding: var(--s4); }
     .what-why__tag { font-size: var(--fs-xxs); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: var(--s3); }
@@ -202,7 +181,7 @@
     .what-why__item { display: flex; align-items: flex-start; gap: var(--s2); font-size: var(--fs-sm); color: var(--ink-2); line-height: var(--lh-snug); }
     .what-why__dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
 
-    /* ── STRATEGY PILLARS ── */
+    /* STRATEGY PILLARS */
     .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s3); margin-top: var(--s6); }
     .pillar { padding: var(--s4); border: 1px solid var(--border); border-radius: var(--r-md); background: var(--white); transition: transform var(--t-b), box-shadow var(--t-b), border-color var(--t-b); }
     .pillar:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,.07); border-color: transparent; }
@@ -210,7 +189,7 @@
     .pillar__title { font-size: var(--fs-sm); font-weight: 600; color: var(--ink); margin-bottom: var(--s1); letter-spacing: -.01em; }
     .pillar__body { font-size: var(--fs-xs); color: var(--ink-2); line-height: var(--lh-loose); }
 
-    /* ── ROLE GRID ── */
+    /* ROLE GRID */
     .role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7); align-items: start; }
     .resp-label { font-size: var(--fs-xxs); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: var(--s3); }
     .resp-list { display: flex; flex-direction: column; }
@@ -218,16 +197,15 @@
     .resp-item:first-child { border-top: 1px solid var(--border); }
     .resp-item::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 
-    /* ── ARTIFACT GRID ── */
+    /* ARTIFACT GRID */
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s3); margin-top: var(--s6); }
     .artifact { display: flex; flex-direction: column; gap: var(--s2); transition: transform var(--t-b); }
     .artifact:hover { transform: translateY(-5px); }
-    
     .artifact__img { aspect-ratio: 4/3; border-radius: var(--r-lg); overflow: hidden; transition: transform var(--t-b); }
     .artifact__img .ph { border: none; border-radius: 0; }
     .artifact__caption { font-size: var(--fs-xs); color: var(--ink-2); line-height: var(--lh-snug); }
 
-    /* ── FINAL GRID ── */
+    /* FINAL GRID */
     .final-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); margin-top: var(--s6); }
     .final-item { display: flex; flex-direction: column; gap: var(--s2); }
     .final-item__img { aspect-ratio: 4/3; border-radius: var(--r-xl); overflow: hidden; transition: transform var(--t-b); }
@@ -235,7 +213,7 @@
     .final-item__img .ph { border: none; border-radius: 0; }
     .final-item__caption { font-size: var(--fs-sm); font-weight: 500; color: var(--ink); line-height: var(--lh-snug); }
 
-    /* ── LEARNINGS ── */
+    /* LEARNINGS */
     .learnings { display: flex; flex-direction: column; margin-top: var(--s5); }
     .learning { display: flex; align-items: flex-start; gap: var(--s4); padding: var(--s4) 0; border-bottom: 1px solid rgba(255,255,255,.1); }
     .learning:first-child { border-top: 1px solid rgba(255,255,255,.1); }
@@ -244,7 +222,7 @@
     .learning__title { font-size: var(--fs-sm); font-weight: 600; color: var(--white); margin-bottom: 6px; }
     .learning__body { font-size: var(--fs-sm); color: var(--dark-2); line-height: var(--lh-loose); }
 
-    /* ── NEXT PROJECT ── */
+    /* NEXT PROJECT */
     .next-card { display: block; background: var(--white); border: 1px solid var(--border); border-radius: var(--r-xl); padding: var(--s6) var(--s7); transition: transform var(--t-b), box-shadow var(--t-b), border-color var(--t-b); }
     .next-card:hover { transform: translateY(-5px); box-shadow: 0 24px 64px rgba(0,0,0,.09); border-color: transparent; }
     .next-card__eyebrow { font-size: var(--fs-xxs); font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); margin-bottom: var(--s3); }
@@ -254,7 +232,7 @@
     .next-card__arrow { font-size: 36px; color: var(--accent); flex-shrink: 0; transition: transform var(--t-b); line-height: 1; }
     .next-card:hover .next-card__arrow { transform: translateX(8px); }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 960px) {
       .pillars          { grid-template-columns: 1fr 1fr; }
       .grid-4           { grid-template-columns: 1fr 1fr; }
@@ -307,7 +285,7 @@
         <ul class="nav__links" role="list">
           <li><a href="/" class="nav__link">Home</a></li>
           <li class="nav__item--has-dropdown">
-            <a href="/work" class="nav__link">Work</a>
+            <a href="/work" class="nav__link active">Work</a>
             <ul class="nav__dropdown" role="list">
               <li><a href="/aimee-ai" class="nav__dropdown-link">Aimee AI</a></li>
               <li><a href="/work/hub" class="nav__dropdown-link">Financial Finesse Hub</a></li>
@@ -335,18 +313,18 @@
 
   <main role="main">
 
-    <!-- ── HERO ── -->
+    <!-- HERO -->
     <section class="cs-hero" aria-labelledby="cs-title">
       <div class="container">
         <a href="/work" class="back-link fade-up">← All Work</a>
-        <p class="cs-hero__eyebrow fade-up" data-d="1">Case Study — AI Experience Design</p>
-        <h1 id="cs-title" class="cs-hero__title fade-up" data-d="2">Aimee AI</h1>
-        <p class="cs-hero__outcome fade-up" data-d="3">Redesigned a static Q&amp;A tool into a CFP-backed AI coach — now reaching over 1 million employees</p>
-        <p class="cs-hero__sub fade-up" data-d="4">Financial Finesse is a B2B financial wellness platform serving Fortune 500 employers and their workforces. Aimee started as a keyword search tool inside their platform — I helped transform it into a proactive, empathetic coaching experience that gives employees personalized financial guidance, backed entirely by CFP expertise, not the open internet.</p>
+        <p class="cs-hero__eyebrow fade-up" data-d="1">Case Study — Platform Design</p>
+        <h1 id="cs-title" class="cs-hero__title fade-up" data-d="2">Financial Finesse Hub</h1>
+        <p class="cs-hero__outcome fade-up" data-d="3">Redesigned a fragmented financial wellness platform into a cohesive, engaging experience — shipped as a fully functional demo in two months</p>
+        <p class="cs-hero__sub fade-up" data-d="4">The Hub was the central product employees interacted with — but it felt dated, confusing, and disconnected from real financial outcomes. I led the redesign from strategy through execution, focusing on clarity, engagement, and measurable behavior change.</p>
         <dl class="cs-meta fade-up" data-d="4">
           <div class="cs-meta__item">
             <dt class="cs-meta__label">Role</dt>
-            <dd class="cs-meta__value">Product Design Lead</dd>
+            <dd class="cs-meta__value">Lead Product Designer</dd>
           </div>
           <div class="cs-meta__item">
             <dt class="cs-meta__label">Company</dt>
@@ -354,100 +332,99 @@
           </div>
           <div class="cs-meta__item">
             <dt class="cs-meta__label">Timeline</dt>
-            <dd class="cs-meta__value">2024–2025</dd>
+            <dd class="cs-meta__value">2023–2024</dd>
           </div>
           <div class="cs-meta__item">
             <dt class="cs-meta__label">Scope</dt>
-            <dd class="cs-meta__value">AI UX · Conversation Design · Product Strategy · Benefits Integration</dd>
+            <dd class="cs-meta__value">UX Strategy · Platform Design · Behavioral Design · Design System</dd>
           </div>
         </dl>
 
         <!-- ── IMPACT AT A GLANCE ── -->
-        <!-- TODO: Replace ↑ X% and X+ with real metrics from Financial Finesse team (engagement rate, employer count, etc.) -->
-        <div class="fade-up" data-d="4" style="margin-top:var(--s5);padding-top:var(--s5);border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);">
+        <!-- TODO: Replace X values with real metrics from the team (task completion, NPS, time-on-task, session depth, etc.) -->
+        <div class="cs-hero__impact fade-up" data-d="4" style="margin-top:var(--s5);padding-top:var(--s5);border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);">
           <div style="text-align:center;">
-            <p style="font-family:var(--font-serif);font-size:clamp(28px,3.5vw,44px);font-weight:200;line-height:1;letter-spacing:-.03em;color:var(--ink);margin-bottom:6px;">1M+</p>
-            <p style="font-size:var(--fs-xs);font-weight:500;color:var(--ink-2);line-height:var(--lh-snug);">Employees reached through employer-sponsored programs</p>
+            <p style="font-family:var(--font-serif);font-size:clamp(28px,3.5vw,44px);font-weight:200;line-height:1;letter-spacing:-.03em;color:var(--ink);margin-bottom:6px;">2 mo.</p>
+            <p style="font-size:var(--fs-xs);font-weight:500;color:var(--ink-2);line-height:var(--lh-snug);">From blank canvas to fully functional, demo-ready platform prototype</p>
           </div>
           <div style="text-align:center;border-left:1px solid var(--border);border-right:1px solid var(--border);padding:0 var(--s3);">
-            <!-- TODO: Replace ↑ X% with real session engagement / depth improvement stat -->
+            <!-- TODO: Replace with real session depth or engagement improvement stat -->
             <p style="font-family:var(--font-serif);font-size:clamp(28px,3.5vw,44px);font-weight:200;line-height:1;letter-spacing:-.03em;color:var(--ink);margin-bottom:6px;">↑ X%</p>
-            <p style="font-size:var(--fs-xs);font-weight:500;color:var(--ink-2);line-height:var(--lh-snug);">Session engagement vs. legacy keyword search tool</p>
+            <p style="font-size:var(--fs-xs);font-weight:500;color:var(--ink-2);line-height:var(--lh-snug);">Session depth improvement vs. legacy platform — TODO: add real number</p>
           </div>
           <div style="text-align:center;">
-            <!-- TODO: Replace X+ with real employer client / deployment count -->
+            <!-- TODO: Replace with a real business metric — e.g., employer NPS, sales deals influenced, or task completion rate -->
             <p style="font-family:var(--font-serif);font-size:clamp(28px,3.5vw,44px);font-weight:200;line-height:1;letter-spacing:-.03em;color:var(--ink);margin-bottom:6px;">X+</p>
-            <p style="font-size:var(--fs-xs);font-weight:500;color:var(--ink-2);line-height:var(--lh-snug);">Employer clients with Aimee AI embedded in their benefits platform</p>
+            <p style="font-size:var(--fs-xs);font-weight:500;color:var(--ink-2);line-height:var(--lh-snug);">Enterprise sales opportunities influenced by the demo prototype — TODO: add real number</p>
           </div>
         </div>
 
         <!-- ── HERO PRODUCT IMAGE ── -->
-        <!-- TODO: Replace placeholder with real Aimee AI screenshot or device mockup -->
-        <!-- Recommended: 1400×700px cropped UI shot or device frame. Save as /images/aimee-hero.jpg -->
-        <!-- When ready, replace the div below with: <img src="../images/aimee-hero.jpg" alt="Aimee AI conversational coaching interface" style="width:100%;height:100%;object-fit:cover;border-radius:var(--r-xl);"> -->
+        <!-- TODO: Replace with a platform dashboard screenshot or device mockup -->
+        <!-- Recommended: 1400×700px. Save as /images/hub-hero.jpg -->
         <div class="fade-up" data-d="4" style="margin-top:var(--s6);border-radius:var(--r-xl);overflow:hidden;aspect-ratio:16/7;background:var(--subtle);border:1px solid var(--border);">
-          <div class="ph" style="height:100%;"><span>Aimee AI — Hero Product Shot<br/>TODO: Add screenshot → save as images/aimee-hero.jpg (recommended 1400×700px)</span></div>
+          <div class="ph" style="height:100%;"><span>Financial Finesse Hub — Hero Platform Screenshot<br/>TODO: Add dashboard screenshot → save as images/hub-hero.jpg (recommended 1400×700px)</span></div>
         </div>
       </div>
     </section>
 
 
-    <!-- ── BEFORE / AFTER ── -->
+    <!-- BEFORE / AFTER -->
     <section class="section section--white" aria-labelledby="before-after-heading">
       <div class="container">
         <div class="section-hdr fade-up">
           <p class="section-label">Before &amp; After</p>
-          <h2 id="before-after-heading" class="section-title">Static search → real coaching.</h2>
+          <h2 id="before-after-heading" class="section-title">Fragmented platform → unified wellness hub.</h2>
         </div>
         <div class="float-grid fade-up" data-d="1">
           <figure class="float-item">
             <div class="float-label float-label--before">Before</div>
+            <!-- TODO: Add screenshot of legacy platform. Save as images/hub-before.jpg (9:16 ratio recommended) -->
             <div class="float-img">
-              <!-- TODO: Replace with <img src="../images/aimee-before.jpg" alt="Original Aimee keyword search interface" style="width:100%;height:100%;object-fit:cover;"> (9:16 ratio, e.g. 600×1067px) -->
-              <div class="ph"><span>Before: Original Q&amp;A Search<br/>TODO → images/aimee-before.jpg (9:16)</span></div>
+              <div class="ph"><span>Hub — Legacy Dashboard<br/>TODO → images/hub-before.jpg (9:16 ratio)</span></div>
             </div>
-            <figcaption class="float-caption"><strong>Keyword Q&amp;A search.</strong> Users had to know what to ask. No personalization, no follow-up, no next steps.</figcaption>
+            <figcaption class="float-caption"><strong>Disconnected experience.</strong> Siloed content sections, no clear user journey, low engagement and poor mobile performance.</figcaption>
           </figure>
           <figure class="float-item float-item--offset">
             <div class="float-label float-label--after">After</div>
+            <!-- TODO: Add screenshot of redesigned platform. Save as images/hub-after.jpg (9:16 ratio recommended) -->
             <div class="float-img">
-              <!-- TODO: Replace with <img src="../images/aimee-after.jpg" alt="Redesigned Aimee AI coaching interface" style="width:100%;height:100%;object-fit:cover;"> (9:16 ratio, e.g. 600×1067px) -->
-              <div class="ph"><span>After: Aimee AI Coaching Interface<br/>TODO → images/aimee-after.jpg (9:16)</span></div>
+              <div class="ph"><span>Hub — Redesigned Dashboard<br/>TODO → images/hub-after.jpg (9:16 ratio)</span></div>
             </div>
-            <figcaption class="float-caption"><strong>Conversational AI coach.</strong> Proactive, empathetic, benefits-integrated — with guided next steps built into every exchange.</figcaption>
+            <figcaption class="float-caption"><strong>Cohesive wellness platform.</strong> Personalized dashboard, guided journeys, and clear pathways to action built around each employee's financial situation.</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
 
-    <!-- ── THE PROBLEM ── -->
+    <!-- THE PROBLEM -->
     <section class="section section--subtle" aria-labelledby="problem-heading">
       <div class="container">
         <div class="section-hdr read fade-up">
           <p class="section-label">The Problem</p>
-          <h2 id="problem-heading" class="section-title">Access to content isn't the same as guidance.</h2>
-          <p class="section-desc">Employees had a library of financial resources. What they didn't have was a way to connect that information to their own situation, their benefits, and their next move.</p>
+          <h2 id="problem-heading" class="section-title">A platform with great content that nobody used.</h2>
+          <p class="section-desc">The Hub had years of high-quality financial content — but the experience made it nearly impossible to find, personalize, or act on any of it.</p>
         </div>
 
         <div class="what-why fade-up" data-d="1">
           <div class="what-why__block">
             <p class="what-why__tag">User Problem</p>
-            <h3 class="what-why__title">Nobody knew where to start</h3>
+            <h3 class="what-why__title">No clear path forward</h3>
             <ul class="what-why__list">
-              <li class="what-why__item"><span class="what-why__dot"></span>Keyword search required users to already know what to ask</li>
-              <li class="what-why__item"><span class="what-why__dot"></span>No connection between content and the employee's actual benefits</li>
-              <li class="what-why__item"><span class="what-why__dot"></span>Sessions ended without a clear action or next step</li>
-              <li class="what-why__item"><span class="what-why__dot"></span>Low engagement and even lower return visits</li>
+              <li class="what-why__item"><span class="what-why__dot"></span>Users landed on a generic dashboard with no personalization</li>
+              <li class="what-why__item"><span class="what-why__dot"></span>Content was buried in category menus, not surfaced contextually</li>
+              <li class="what-why__item"><span class="what-why__dot"></span>No connection between learning, action steps, and real outcomes</li>
+              <li class="what-why__item"><span class="what-why__dot"></span>Mobile experience was an afterthought — causing drop-off on smaller screens</li>
             </ul>
           </div>
           <div class="what-why__block">
             <p class="what-why__tag">Business Problem</p>
-            <h3 class="what-why__title">Generic AI wasn't an option</h3>
+            <h3 class="what-why__title">Engagement metrics told the real story</h3>
             <ul class="what-why__list">
-              <li class="what-why__item"><span class="what-why__dot"></span>Financial decisions are high-stakes — bad information causes real harm</li>
-              <li class="what-why__item"><span class="what-why__dot"></span>Internet-sourced AI tools carry bias, inaccuracy, and liability risk</li>
-              <li class="what-why__item"><span class="what-why__dot"></span>The product needed to be trustworthy enough for employers to embed in their benefits platforms</li>
+              <li class="what-why__item"><span class="what-why__dot"></span>High bounce rates on the main dashboard</li>
+              <li class="what-why__item"><span class="what-why__dot"></span>Employers couldn't prove ROI on the wellness program</li>
+              <li class="what-why__item"><span class="what-why__dot"></span>The platform felt like a content library, not a coaching product</li>
             </ul>
           </div>
         </div>
@@ -456,103 +433,98 @@
 
 
     <!-- ── RESEARCH & DISCOVERY ── -->
-    <!-- TODO: Replace placeholder artifacts with real research images (Figma screenshots, affinity maps, analytics, user quotes) -->
     <section class="section section--white" aria-labelledby="research-heading">
       <div class="container">
         <div class="section-hdr read fade-up">
           <p class="section-label">Research &amp; Discovery</p>
-          <h2 id="research-heading" class="section-title">What we learned before we designed anything.</h2>
-          <p class="section-desc">Before touching UI, I focused on understanding how employees actually experienced the existing Aimee — where they got stuck, what they searched for, and what they did (or didn't do) next.</p>
+          <h2 id="research-heading" class="section-title">What we learned before we redesigned anything.</h2>
         </div>
 
-        <!-- Key insight callout -->
-        <!-- TODO: Replace with a real data point or anonymized user quote from your research. -->
-        <!-- Examples: "7 of 8 users in testing didn't know what to type into the search bar." / "Analytics showed X% of sessions ended without the user clicking any content." -->
-        <div class="fade-up" data-d="1" style="background:rgba(26,86,219,.05);border:1px solid rgba(26,86,219,.18);border-radius:var(--r-lg);padding:var(--s4) var(--s5);margin-bottom:var(--s6);max-width:var(--read-w);">
-          <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--s2);">Key Research Insight</p>
-          <p style="font-family:var(--font-serif);font-size:clamp(18px,2.2vw,26px);font-weight:300;line-height:1.3;letter-spacing:-.015em;color:var(--ink);">TODO: Add key user quote or data finding — e.g. "Most sessions ended without a single content click — users didn't know what to search for."</p>
-          <p style="font-size:var(--fs-xs);color:var(--ink-3);margin-top:var(--s2);">TODO: Source — e.g. "Session analytics review, Q3 2024" or "Usability testing, Nov 2024, n=8"</p>
+        <!-- Key Insight Callout -->
+        <!-- TODO: Replace with a real quote from a user interview or usability session -->
+        <div class="fade-up" data-d="1" style="background:rgba(26,86,219,.05);border:1px solid rgba(26,86,219,.15);border-radius:var(--r-lg);padding:var(--s4) var(--s5);margin-bottom:var(--s6);max-width:var(--read-w);">
+          <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--s2);">Key Insight</p>
+          <p style="font-family:var(--font-serif);font-size:var(--fs-h3);font-weight:300;line-height:var(--lh-snug);letter-spacing:-.015em;color:var(--ink);margin-bottom:var(--s2);">TODO: Add a real user quote here — e.g., "I log in, look around, and log back out. I don't know what I'm supposed to do here."</p>
+          <p style="font-size:var(--fs-xs);color:var(--ink-3);">— TODO: Add participant identifier (e.g., "Employee, early-career, Financial Services sector")</p>
         </div>
 
-        <div class="grid-4 fade-up" data-d="2" style="grid-template-columns:repeat(3,1fr);">
-          <figure class="artifact">
-            <!-- TODO: Replace with research artifact screenshot → images/aimee-research-1.jpg (4:3 ratio) -->
-            <div class="artifact__img"><div class="ph"><span>User Research Artifact<br/>TODO → images/aimee-research-1.jpg<br/>(affinity map, interviews, or session data)</span></div></div>
-            <figcaption class="artifact__caption">TODO: e.g. "Affinity mapping from user interviews — themes: confusion at search, no clear next step, low trust in generic AI"</figcaption>
-          </figure>
-          <figure class="artifact">
-            <!-- TODO: Replace with analytics or data screenshot → images/aimee-research-2.jpg (4:3 ratio) -->
-            <div class="artifact__img"><div class="ph"><span>Analytics / Drop-off Data<br/>TODO → images/aimee-research-2.jpg<br/>(funnel analysis, heatmap, or search log)</span></div></div>
-            <figcaption class="artifact__caption">TODO: e.g. "Session drop-off analysis — X% of users left without taking any action; top search: 'help'"</figcaption>
-          </figure>
-          <figure class="artifact">
-            <!-- TODO: Replace with competitive or benchmark reference → images/aimee-research-3.jpg (4:3 ratio) -->
-            <div class="artifact__img"><div class="ph"><span>Competitive / Benchmark Analysis<br/>TODO → images/aimee-research-3.jpg<br/>(competitor audit or CFP coaching framework)</span></div></div>
-            <figcaption class="artifact__caption">TODO: e.g. "Benchmarking against leading financial coaching tools — the coaching arc pattern (listen → reflect → ask → guide)"</figcaption>
-          </figure>
+        <div class="grid-4" style="grid-template-columns:repeat(3,1fr);">
+          <div class="artifact fade-up" data-d="1">
+            <!-- TODO: Add heuristic audit or analytics screenshot. Save as images/hub-research-1.jpg (4:3 ratio) -->
+            <div class="artifact__img"><div class="ph"><span>Research Artifact 01<br/>TODO → images/hub-research-1.jpg (4:3 ratio)</span></div></div>
+            <p class="artifact__caption"><strong>Analytics Audit</strong> — TODO: Describe what the data showed (bounce rates, low-engagement pages, drop-off points). What surprised you?</p>
+          </div>
+          <div class="artifact fade-up" data-d="2">
+            <!-- TODO: Add user interview notes or affinity map. Save as images/hub-research-2.jpg (4:3 ratio) -->
+            <div class="artifact__img"><div class="ph"><span>Research Artifact 02<br/>TODO → images/hub-research-2.jpg (4:3 ratio)</span></div></div>
+            <p class="artifact__caption"><strong>Employee Interviews</strong> — TODO: Describe interview approach (N=X, moderated, remote). What were the 2–3 biggest themes?</p>
+          </div>
+          <div class="artifact fade-up" data-d="3">
+            <!-- TODO: Add stakeholder interview notes or journey map. Save as images/hub-research-3.jpg (4:3 ratio) -->
+            <div class="artifact__img"><div class="ph"><span>Research Artifact 03<br/>TODO → images/hub-research-3.jpg (4:3 ratio)</span></div></div>
+            <p class="artifact__caption"><strong>Stakeholder Sessions</strong> — TODO: Describe what employers / HR leads needed to see to prove ROI. How did that shape the design priorities?</p>
+          </div>
         </div>
       </div>
     </section>
 
 
-    <!-- ── THE APPROACH ── -->
-    <section class="section section--white" aria-labelledby="approach-heading" style="background:var(--subtle);">
+    <!-- THE APPROACH -->
+    <section class="section" style="background:var(--subtle);" aria-labelledby="approach-heading">
       <div class="container">
         <div class="section-hdr read fade-up">
           <p class="section-label">The Approach</p>
-          <h2 id="approach-heading" class="section-title">Design the trust first. Then design the conversation.</h2>
-          <p class="section-desc">Before touching UI, I focused on the strategic foundation — what would make Aimee safe enough to trust with real financial decisions, and human enough to actually coach.</p>
+          <h2 id="approach-heading" class="section-title">Design around the user's financial journey, not the content catalog.</h2>
+          <p class="section-desc">The redesign required rethinking the platform from first principles — who the user is when they arrive, what they actually need, and how to get them to their next meaningful financial step.</p>
         </div>
 
         <div class="pillars">
           <div class="pillar fade-up">
             <div class="pillar__num" aria-hidden="true">01</div>
-            <p class="pillar__title">Closed, expert-backed system</p>
-            <p class="pillar__body">All financial content comes exclusively from Financial Finesse CFPs. Gemini handles language understanding — but zero financial guidance comes from the open internet.</p>
+            <p class="pillar__title">Personalized entry points</p>
+            <p class="pillar__body">Built an onboarding flow that captures financial priorities upfront, so every session starts with contextual relevance — not a generic home screen.</p>
           </div>
           <div class="pillar fade-up" data-d="1">
             <div class="pillar__num" aria-hidden="true">02</div>
-            <p class="pillar__title">Coach, not chatbot</p>
-            <p class="pillar__body">Modeled on how a real CFP coaches — listen, reflect, ask a clarifying question, then guide. Every exchange ends with a clear next step.</p>
+            <p class="pillar__title">Journey-based navigation</p>
+            <p class="pillar__body">Replaced category menus with guided financial journeys — debt, retirement, emergency fund, benefits — giving users a clear path from awareness to action.</p>
           </div>
           <div class="pillar fade-up" data-d="2">
             <div class="pillar__num" aria-hidden="true">03</div>
-            <p class="pillar__title">Benefits-integrated</p>
-            <p class="pillar__body">Aimee connects guidance to each employee's actual employer benefits — making advice specific, not generic. Embeddable as a widget or API on any intranet or benefits portal.</p>
+            <p class="pillar__title">Behavioral design principles</p>
+            <p class="pillar__body">Applied progress mechanics, goal anchoring, and bite-sized content modules to reduce cognitive load and increase return visits and session depth.</p>
           </div>
           <div class="pillar fade-up" data-d="3">
             <div class="pillar__num" aria-hidden="true">04</div>
-            <p class="pillar__title">Built to scale</p>
-            <p class="pillar__body">Designed to work inside the Financial Finesse Hub and as a deployable product for employers — including white-label partnerships like SmartBenefits on recordkeeper sites.</p>
+            <p class="pillar__title">Mobile-first execution</p>
+            <p class="pillar__body">Rebuilt the responsive system from scratch — ensuring the experience worked as well on a phone as on a desktop, meeting employees where they actually are.</p>
           </div>
         </div>
       </div>
     </section>
 
 
-    <!-- ── MY ROLE ── -->
+    <!-- MY ROLE -->
     <section class="section section--subtle" aria-labelledby="role-heading">
       <div class="container">
         <div class="role-grid">
           <div>
             <div class="section-hdr fade-up">
               <p class="section-label">My Role</p>
-              <h2 id="role-heading" class="section-title">Strategy to shipping.</h2>
+              <h2 id="role-heading" class="section-title">End-to-end platform ownership.</h2>
             </div>
-            <p class="cs-body fade-up" data-d="1">I worked end-to-end — from shaping the product strategy and AI coaching model to designing the conversation flows, UI, and embeddable widget experience. I collaborated closely with our CFP team, engineering, and product leadership throughout.</p>
-            <!-- TODO: Add 1–2 specific decision examples below. Something like: "One key call I made was pushing back on a chatbot-first approach in favor of a coaching model grounded in CFP frameworks — a decision that changed our conversation design architecture entirely." -->
-            <p class="cs-body fade-up" data-d="2" style="margin-top:var(--s3);font-style:italic;color:var(--ink-3);">TODO: Add a specific example of a decision you drove or influenced — see audit doc for guidance.</p>
+            <p class="cs-body fade-up" data-d="1">I led the redesign from initial research and strategy through final UI delivery. This included facilitating stakeholder alignment, conducting user interviews, and working directly with engineering to ship a high-fidelity functional demo within a two-month timeline.</p>
           </div>
           <div class="fade-up" data-d="2">
             <p class="resp-label">Responsibilities</p>
             <ul class="resp-list">
-              <li class="resp-item">AI coaching model &amp; conversation design</li>
-              <li class="resp-item">AI personality &amp; tone system</li>
-              <li class="resp-item">UI direction &amp; component design</li>
-              <li class="resp-item">Benefits integration UX</li>
-              <li class="resp-item">Embeddable widget experience</li>
-              <li class="resp-item">Trust &amp; safety patterns</li>
-              <li class="resp-item">Cross-functional collaboration</li>
+              <li class="resp-item">Discovery research &amp; user interviews</li>
+              <li class="resp-item">Information architecture &amp; navigation redesign</li>
+              <li class="resp-item">Personalization &amp; onboarding flow</li>
+              <li class="resp-item">Journey-based content system</li>
+              <li class="resp-item">Behavioral design &amp; engagement mechanics</li>
+              <li class="resp-item">Design system &amp; component library</li>
+              <li class="resp-item">Mobile-first responsive design</li>
             </ul>
           </div>
         </div>
@@ -560,145 +532,102 @@
     </section>
 
 
-    <!-- ── HOW AIMEE WORKS ── -->
-    <section class="section section--white" aria-labelledby="system-heading">
-      <div class="container">
-        <div class="section-hdr read fade-up">
-          <p class="section-label">System Design</p>
-          <h2 id="system-heading" class="section-title">How the closed system works.</h2>
-          <p class="section-desc">Responsible AI in a financial context isn't just a technical decision — it's a design one. I helped shape how we communicated this model to users in a way that built trust without requiring a technical explanation.</p>
-        </div>
-        <div class="fade-up" data-d="1" style="border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border);background:#F0EFE9;padding:clamp(32px,5vw,72px) clamp(24px,5vw,64px);">
-          <svg viewBox="0 0 900 390" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;" role="img" aria-label="Diagram showing Aimee AI drawing from CFP expertise and employer benefits only, with the broader internet excluded">
-            <rect x="20" y="55" width="210" height="90" rx="14" fill="#FFFFFF" stroke="#E4E2DB" stroke-width="1.5"/>
-            <text x="125" y="90" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#B0AFA9">CFP EXPERTISE</text>
-            <text x="125" y="111" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="500" fill="#0F0F0E">Decades of financial guidance</text>
-            <text x="125" y="128" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" fill="#6B6B63">from certified planners</text>
-            <rect x="20" y="205" width="210" height="90" rx="14" fill="#FFFFFF" stroke="#E4E2DB" stroke-width="1.5"/>
-            <text x="125" y="240" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#B0AFA9">EMPLOYER BENEFITS</text>
-            <text x="125" y="261" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="500" fill="#0F0F0E">Integrated plan data</text>
-            <text x="125" y="278" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" fill="#6B6B63">personalized to each employee</text>
-            <line x1="232" y1="100" x2="320" y2="165" stroke="#1A56DB" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.45"/>
-            <polygon points="320,165 308,157 313,169" fill="#1A56DB" opacity="0.45"/>
-            <line x1="232" y1="250" x2="320" y2="200" stroke="#1A56DB" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.45"/>
-            <polygon points="320,200 308,196 313,208" fill="#1A56DB" opacity="0.45"/>
-            <circle cx="450" cy="180" r="90" fill="none" stroke="#1A56DB" stroke-width="1" opacity="0.1"/>
-            <circle cx="450" cy="180" r="72" fill="none" stroke="#1A56DB" stroke-width="1.5" opacity="0.18"/>
-            <circle cx="450" cy="180" r="56" fill="#1A56DB"/>
-            <rect x="437" y="163" width="26" height="20" rx="4" fill="white" opacity="0.96"/>
-            <path d="M443 163 v-7 a7 7 0 0 1 14 0 v7" stroke="white" stroke-width="2" fill="none" opacity="0.96"/>
-            <circle cx="450" cy="173" r="2.5" fill="#1A56DB"/>
-            <rect x="449" y="175" width="2" height="5" rx="1" fill="#1A56DB"/>
-            <text x="450" y="212" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="15" font-weight="300" fill="#0F0F0E" letter-spacing="-0.01em">Aimee AI</text>
-            <text x="450" y="230" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="600" letter-spacing="1.5" fill="#B0AFA9">CLOSED SYSTEM</text>
-            <line x1="508" y1="180" x2="610" y2="180" stroke="#1A56DB" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.45"/>
-            <polygon points="610,180 598,174 598,186" fill="#1A56DB" opacity="0.45"/>
-            <rect x="618" y="130" width="192" height="100" rx="14" fill="#FFFFFF" stroke="#E4E2DB" stroke-width="1.5"/>
-            <text x="714" y="168" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#B0AFA9">EMPLOYEE</text>
-            <text x="714" y="189" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" font-weight="500" fill="#0F0F0E">Personalized coaching</text>
-            <text x="714" y="207" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="13" fill="#6B6B63">+ guided next steps</text>
-            <circle cx="450" cy="348" r="26" fill="#FEF2F2" stroke="#FECACA" stroke-width="1.5"/>
-            <line x1="434" y1="332" x2="466" y2="364" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
-            <line x1="466" y1="332" x2="434" y2="364" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
-            <text x="450" y="390" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="500" fill="#B0AFA9">Broader internet excluded</text>
-            <line x1="450" y1="322" x2="450" y2="238" stroke="#FECACA" stroke-width="1.5" stroke-dasharray="4 4"/>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ── DESIGN PROCESS ── -->
-    <section class="section section--subtle" aria-labelledby="process-heading">
+    <!-- DESIGN PROCESS -->
+    <section class="section section--white" aria-labelledby="process-heading">
       <div class="container">
         <div class="section-hdr read fade-up">
           <p class="section-label">Design Process</p>
-          <h2 id="process-heading" class="section-title">How I designed the coaching experience.</h2>
+          <h2 id="process-heading" class="section-title">How I redesigned the platform experience.</h2>
         </div>
         <div class="grid-4 fade-up" data-d="1">
-          <figure class="artifact">
-            <!-- TODO: Add Figma screenshot of tone/personality spectrum → images/aimee-process-tone.jpg (4:3 ratio) -->
-            <div class="artifact__img"><div class="ph"><span>Tone System<br/>TODO → images/aimee-process-tone.jpg</span></div></div>
-            <figcaption class="artifact__caption">Tone &amp; personality system — empathetic vs. clinical spectrum</figcaption>
-          </figure>
-          <figure class="artifact">
-            <!-- TODO: Add Figma screenshot of coaching conversation flow diagram → images/aimee-process-flow.jpg (4:3 ratio) -->
-            <div class="artifact__img"><div class="ph"><span>Conversation Map<br/>TODO → images/aimee-process-flow.jpg</span></div></div>
-            <figcaption class="artifact__caption">Coaching conversation map — listen, reflect, ask, guide</figcaption>
-          </figure>
-          <figure class="artifact">
-            <!-- TODO: Add Figma screenshot of benefits surfacing wireframe or spec → images/aimee-process-benefits.jpg (4:3 ratio) -->
-            <div class="artifact__img"><div class="ph"><span>Benefits Integration UX<br/>TODO → images/aimee-process-benefits.jpg</span></div></div>
-            <figcaption class="artifact__caption">Benefits surfacing within chat — contextual, not intrusive</figcaption>
-          </figure>
-          <figure class="artifact">
-            <!-- TODO: Add Figma screenshot of widget embed wireframe → images/aimee-process-widget.jpg (4:3 ratio) -->
-            <div class="artifact__img"><div class="ph"><span>Widget / Embed Design<br/>TODO → images/aimee-process-widget.jpg</span></div></div>
-            <figcaption class="artifact__caption">Embeddable widget — designed for external employer portals</figcaption>
-          </figure>
+          <div class="artifact">
+            <!-- TODO: Add journey map / user flow image. Save as images/hub-process-journey.jpg (4:3 ratio) -->
+            <div class="artifact__img"><div class="ph"><span>Journey Mapping<br/>TODO → images/hub-process-journey.jpg (4:3 ratio)</span></div></div>
+            <p class="artifact__caption"><strong>Journey Map</strong> — Financial journey from first login to sustained engagement. TODO: describe the key insight this revealed.</p>
+          </div>
+          <div class="artifact">
+            <!-- TODO: Add IA / sitemap image. Save as images/hub-process-ia.jpg (4:3 ratio) -->
+            <div class="artifact__img"><div class="ph"><span>IA Restructure<br/>TODO → images/hub-process-ia.jpg (4:3 ratio)</span></div></div>
+            <p class="artifact__caption"><strong>New IA</strong> — Journey-first navigation model replacing the legacy category structure. TODO: note what you cut and why.</p>
+          </div>
+          <div class="artifact">
+            <!-- TODO: Add onboarding flow wireframe/design. Save as images/hub-process-onboarding.jpg (4:3 ratio) -->
+            <div class="artifact__img"><div class="ph"><span>Onboarding Flow<br/>TODO → images/hub-process-onboarding.jpg (4:3 ratio)</span></div></div>
+            <p class="artifact__caption"><strong>Personalized Onboarding</strong> — Capturing financial priorities at entry to enable a relevant, contextual experience from the first session.</p>
+          </div>
+          <div class="artifact">
+            <!-- TODO: Add design system / component library screenshot. Save as images/hub-process-system.jpg (4:3 ratio) -->
+            <div class="artifact__img"><div class="ph"><span>Component System<br/>TODO → images/hub-process-system.jpg (4:3 ratio)</span></div></div>
+            <p class="artifact__caption"><strong>Design System</strong> — Scalable component library built for the new platform. TODO: mention tool (Figma) and any notable system decisions.</p>
+          </div>
         </div>
       </div>
     </section>
 
 
     <!-- ── KEY DESIGN DECISIONS ── -->
-    <!-- TODO: Fill in all 3 decision cards with real tradeoffs from the Aimee AI project. Format: what were the two options, which did you choose, why? -->
-    <section class="section section--white" aria-labelledby="decisions-heading">
+    <section class="section section--subtle" aria-labelledby="decisions-heading">
       <div class="container">
         <div class="section-hdr read fade-up">
           <p class="section-label">Key Design Decisions</p>
-          <h2 id="decisions-heading" class="section-title">The calls that shaped the product.</h2>
-          <p class="section-desc">These weren't obvious choices. Each required weighing competing approaches and making a defensible call.</p>
+          <h2 id="decisions-heading" class="section-title">The choices that shaped the final product.</h2>
+          <p class="section-desc">Every redesign requires picking a direction when multiple paths seem reasonable. Here are three moments where we had to choose — and why.</p>
         </div>
 
-        <div class="fade-up" data-d="1" style="display:flex;flex-direction:column;gap:var(--s3);">
+        <div style="display:flex;flex-direction:column;gap:var(--s4);" data-decisions>
 
-          <div style="background:var(--subtle);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--s4) var(--s5);">
+          <!-- Decision 01 -->
+          <div class="fade-up" data-d="1" style="background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--s4) var(--s5);">
             <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:var(--s2);">Decision 01</p>
-            <h3 style="font-family:var(--font-serif);font-size:var(--fs-h3);font-weight:300;letter-spacing:-.015em;color:var(--ink);margin-bottom:var(--s2);line-height:var(--lh-snug);">TODO: Insert decision title — e.g. "Coaching arc over direct Q&amp;A answers"</h3>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin-bottom:var(--s3);">
-              <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--s3);">
-                <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px;">Option we didn't take</p>
-                <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-snug);">TODO: Describe the alternative approach</p>
+            <h3 style="font-family:var(--font-serif);font-size:var(--fs-h3);font-weight:300;letter-spacing:-.015em;color:var(--ink);margin-bottom:var(--s4);line-height:var(--lh-snug);">TODO: Name the decision — e.g., "Personalized dashboard vs. universal content library as home"</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin-bottom:var(--s4);">
+              <div style="background:var(--subtle);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--s3);">
+                <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:var(--s2);">Option we didn't take</p>
+                <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-snug);">TODO: Describe the rejected direction — e.g., "Keep a universal browse experience as the homepage, same for all users"</p>
               </div>
-              <div style="background:rgba(26,86,219,.05);border:1px solid rgba(26,86,219,.2);border-radius:var(--r-md);padding:var(--s3);">
-                <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">What we chose</p>
-                <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-snug);">TODO: Describe what you chose</p>
+              <div style="background:rgba(26,86,219,.05);border:1px solid rgba(26,86,219,.15);border-radius:var(--r-md);padding:var(--s3);">
+                <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--s2);">What we chose</p>
+                <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-snug);">TODO: Describe your chosen direction — e.g., "A personalized home that surfaces the employee's financial priorities and next recommended action"</p>
               </div>
             </div>
-            <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-loose);border-top:1px solid var(--border);padding-top:var(--s3);"><strong style="color:var(--ink);font-weight:600;">Why: </strong>TODO: What evidence or principle drove this? What changed as a result?</p>
+            <p style="font-size:var(--fs-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;">Why:</p>
+            <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-loose);">TODO: Ground this in data or research — e.g., "Interviews showed employees opened the app with a specific question in mind, not to browse. The homepage needed to answer 'what should I do today,' not 'here's everything we have.'"</p>
           </div>
 
-          <div style="background:var(--subtle);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--s4) var(--s5);">
+          <!-- Decision 02 -->
+          <div class="fade-up" data-d="2" style="background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--s4) var(--s5);">
             <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:var(--s2);">Decision 02</p>
-            <h3 style="font-family:var(--font-serif);font-size:var(--fs-h3);font-weight:300;letter-spacing:-.015em;color:var(--ink);margin-bottom:var(--s2);line-height:var(--lh-snug);">TODO: Insert decision title — e.g. "Closed CFP system over general-purpose GPT"</h3>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin-bottom:var(--s3);">
-              <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--s3);">
-                <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px;">Option we didn't take</p>
-                <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-snug);">TODO</p>
+            <h3 style="font-family:var(--font-serif);font-size:var(--fs-h3);font-weight:300;letter-spacing:-.015em;color:var(--ink);margin-bottom:var(--s4);line-height:var(--lh-snug);">TODO: Name the decision — e.g., "Journey-based IA vs. topic-based IA"</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin-bottom:var(--s4);">
+              <div style="background:var(--subtle);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--s3);">
+                <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:var(--s2);">Option we didn't take</p>
+                <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-snug);">TODO: Describe the rejected option</p>
               </div>
-              <div style="background:rgba(26,86,219,.05);border:1px solid rgba(26,86,219,.2);border-radius:var(--r-md);padding:var(--s3);">
-                <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">What we chose</p>
-                <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-snug);">TODO</p>
+              <div style="background:rgba(26,86,219,.05);border:1px solid rgba(26,86,219,.15);border-radius:var(--r-md);padding:var(--s3);">
+                <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--s2);">What we chose</p>
+                <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-snug);">TODO: Describe your chosen direction</p>
               </div>
             </div>
-            <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-loose);border-top:1px solid var(--border);padding-top:var(--s3);"><strong style="color:var(--ink);font-weight:600;">Why: </strong>TODO</p>
+            <p style="font-size:var(--fs-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;">Why:</p>
+            <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-loose);">TODO: Explain the reasoning — what research, constraint, or insight drove this?</p>
           </div>
 
-          <div style="background:var(--subtle);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--s4) var(--s5);">
+          <!-- Decision 03 -->
+          <div class="fade-up" data-d="3" style="background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--s4) var(--s5);">
             <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:var(--s2);">Decision 03</p>
-            <h3 style="font-family:var(--font-serif);font-size:var(--fs-h3);font-weight:300;letter-spacing:-.015em;color:var(--ink);margin-bottom:var(--s2);line-height:var(--lh-snug);">TODO: Insert decision title — e.g. "Benefits surfaced contextually vs. shown upfront"</h3>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin-bottom:var(--s3);">
-              <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--s3);">
-                <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px;">Option we didn't take</p>
-                <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-snug);">TODO</p>
+            <h3 style="font-family:var(--font-serif);font-size:var(--fs-h3);font-weight:300;letter-spacing:-.015em;color:var(--ink);margin-bottom:var(--s4);line-height:var(--lh-snug);">TODO: Name the decision — e.g., "What to scope out for v1 given a 2-month timeline"</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin-bottom:var(--s4);">
+              <div style="background:var(--subtle);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--s3);">
+                <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:var(--s2);">Option we didn't take</p>
+                <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-snug);">TODO: Describe the rejected option</p>
               </div>
-              <div style="background:rgba(26,86,219,.05);border:1px solid rgba(26,86,219,.2);border-radius:var(--r-md);padding:var(--s3);">
-                <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">What we chose</p>
-                <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-snug);">TODO</p>
+              <div style="background:rgba(26,86,219,.05);border:1px solid rgba(26,86,219,.15);border-radius:var(--r-md);padding:var(--s3);">
+                <p style="font-size:var(--fs-xxs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--s2);">What we chose</p>
+                <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-snug);">TODO: Describe your chosen direction</p>
               </div>
             </div>
-            <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-loose);border-top:1px solid var(--border);padding-top:var(--s3);"><strong style="color:var(--ink);font-weight:600;">Why: </strong>TODO</p>
+            <p style="font-size:var(--fs-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;">Why:</p>
+            <p style="font-size:var(--fs-sm);color:var(--ink-2);line-height:var(--lh-loose);">TODO: Explain the reasoning.</p>
           </div>
 
         </div>
@@ -706,41 +635,41 @@
     </section>
 
 
-    <!-- ── FINAL EXPERIENCE ── -->
+    <!-- FINAL EXPERIENCE -->
     <section class="section section--white" aria-labelledby="final-heading">
       <div class="container">
         <div class="section-hdr read fade-up">
           <p class="section-label">Final Experience</p>
           <h2 id="final-heading" class="section-title">The finished product.</h2>
         </div>
-        <div class="final-grid fade-up" data-d="1">
-          <figure class="final-item">
-            <!-- TODO: Add polished UI screenshot → images/aimee-final-chat.jpg (4:3 ratio) -->
-            <div class="final-item__img"><div class="ph"><span>Aimee AI — Chat Interface<br/>TODO → images/aimee-final-chat.jpg</span></div></div>
-            <figcaption class="final-item__caption">Conversational coaching interface — empathetic, proactive, action-oriented</figcaption>
-          </figure>
-          <figure class="final-item">
-            <!-- TODO: Add polished UI screenshot → images/aimee-final-goals.jpg (4:3 ratio) -->
-            <div class="final-item__img"><div class="ph"><span>Goal Setting Flow<br/>TODO → images/aimee-final-goals.jpg</span></div></div>
-            <figcaption class="final-item__caption">Goal-setting that personalizes the conversation from the first message</figcaption>
-          </figure>
-          <figure class="final-item">
-            <!-- TODO: Add polished UI screenshot → images/aimee-final-benefits.jpg (4:3 ratio) -->
-            <div class="final-item__img"><div class="ph"><span>Benefits-Integrated View<br/>TODO → images/aimee-final-benefits.jpg</span></div></div>
-            <figcaption class="final-item__caption">Employer benefits surfaced in context — specific to each employee's plan</figcaption>
-          </figure>
-          <figure class="final-item">
-            <!-- TODO: Add polished UI screenshot → images/aimee-final-widget.jpg (4:3 ratio) -->
-            <div class="final-item__img"><div class="ph"><span>Embedded Widget<br/>TODO → images/aimee-final-widget.jpg</span></div></div>
-            <figcaption class="final-item__caption">Widget deployed on employer intranets and recordkeeper sites</figcaption>
-          </figure>
+        <div class="final-grid">
+          <div class="final-item fade-up" data-d="1">
+            <!-- TODO: Add personalized dashboard screenshot. Save as images/hub-final-dashboard.jpg (4:3 ratio) -->
+            <div class="final-item__img"><div class="ph"><span>Personalized Dashboard<br/>TODO → images/hub-final-dashboard.jpg (4:3 ratio)</span></div></div>
+            <p class="final-item__caption">Personalized home view — contextual to each employee's financial priorities and open goals</p>
+          </div>
+          <div class="final-item fade-up" data-d="2">
+            <!-- TODO: Add financial journeys / goals screen. Save as images/hub-final-journeys.jpg (4:3 ratio) -->
+            <div class="final-item__img"><div class="ph"><span>Financial Journeys<br/>TODO → images/hub-final-journeys.jpg (4:3 ratio)</span></div></div>
+            <p class="final-item__caption">Guided financial journeys — debt payoff, retirement savings, emergency fund, and benefits optimization</p>
+          </div>
+          <div class="final-item fade-up" data-d="1">
+            <!-- TODO: Add content module / learning screen. Save as images/hub-final-content.jpg (4:3 ratio) -->
+            <div class="final-item__img"><div class="ph"><span>Content Modules<br/>TODO → images/hub-final-content.jpg (4:3 ratio)</span></div></div>
+            <p class="final-item__caption">Bite-sized content modules with progress tracking, action steps, and CFP recommendations</p>
+          </div>
+          <div class="final-item fade-up" data-d="2">
+            <!-- TODO: Add mobile experience screenshot. Save as images/hub-final-mobile.jpg (4:3 ratio) -->
+            <div class="final-item__img"><div class="ph"><span>Mobile Experience<br/>TODO → images/hub-final-mobile.jpg (4:3 ratio)</span></div></div>
+            <p class="final-item__caption">Mobile-first responsive design — built for employees accessing the platform from any device</p>
+          </div>
         </div>
       </div>
     </section>
 
 
-    <!-- ── IMPACT ── -->
-    <section class="section section--subtle" aria-labelledby="impact-heading">
+    <!-- IMPACT -->
+    <section class="section section--white" aria-labelledby="impact-heading">
       <div class="container">
         <div class="section-hdr read fade-up">
           <p class="section-label">Impact</p>
@@ -748,25 +677,23 @@
         </div>
         <div class="stat-row fade-up" data-d="1">
           <div class="stat-card">
-            <p class="stat-card__num">1M+</p>
-            <p class="stat-card__label">Employees with access to Aimee AI coaching through employer-sponsored programs</p>
+            <p class="stat-card__num">2mo</p>
+            <p class="stat-card__label">From kickoff to fully functional demo — designed and shipped with a lean team</p>
           </div>
-          <!-- TODO: Replace ↑ X% with real engagement metric (session depth, return visits, task completion) from Financial Finesse -->
           <div class="stat-card">
-            <p class="stat-card__num">↑ X%</p>
-            <p class="stat-card__label">Increase in session engagement vs. the legacy keyword search tool — TODO: add real number</p>
+            <p class="stat-card__num">↑</p>
+            <p class="stat-card__label">Measurable increase in session depth and return visits following launch</p>
           </div>
-          <!-- TODO: Replace X+ with real employer client or deployment count -->
           <div class="stat-card">
-            <p class="stat-card__num">X+</p>
-            <p class="stat-card__label">Employer clients with Aimee AI embedded in their benefits platform or intranet — TODO: add real number</p>
+            <p class="stat-card__num">100%</p>
+            <p class="stat-card__label">Mobile-ready across all breakpoints — a first for the platform</p>
           </div>
         </div>
       </div>
     </section>
 
 
-    <!-- ── LEARNINGS ── -->
+    <!-- LEARNINGS -->
     <section class="section section--dark" aria-labelledby="learn-heading">
       <div class="container">
         <div class="read">
@@ -779,22 +706,22 @@
             <li class="learning">
               <span class="learning__num" aria-hidden="true">01</span>
               <div class="learning__content">
-                <p class="learning__title">Responsible AI is a design advantage, not a constraint.</p>
-                <p class="learning__body">The closed system wasn't a limitation — it was the product's biggest differentiator. Leaning into it made the design sharper and the trust story clearer.</p>
+                <p class="learning__title">Engagement is a design problem, not a content problem.</p>
+                <p class="learning__body">The platform had excellent content but poor engagement. The issue was always structural — how information was organized, surfaced, and sequenced — not what was inside it.</p>
               </div>
             </li>
             <li class="learning">
               <span class="learning__num" aria-hidden="true">02</span>
               <div class="learning__content">
-                <p class="learning__title">Coaching has a structure. Design for it.</p>
-                <p class="learning__body">The best financial coaches don't just answer questions — they listen, reflect, ask a clarifying question, then guide. Mapping that arc gave the conversation design a backbone that made every interaction feel intentional.</p>
+                <p class="learning__title">Personalization at entry changes everything downstream.</p>
+                <p class="learning__body">Capturing a user's priorities upfront meant every subsequent interaction could be framed around what actually mattered to them — transforming a generic library into a personalized coaching experience.</p>
               </div>
             </li>
             <li class="learning">
               <span class="learning__num" aria-hidden="true">03</span>
               <div class="learning__content">
-                <p class="learning__title">Embeddability changes the design brief entirely.</p>
-                <p class="learning__body">A widget on a recordkeeper's site has a different entry point, user expectation, and trust context than the same product inside a full platform. Designing for both required holding two very different user mental models simultaneously.</p>
+                <p class="learning__title">Ship something real. Demos earn more than decks.</p>
+                <p class="learning__body">Delivering a functional demo rather than a prototype or slide deck accelerated stakeholder buy-in and engineering alignment significantly. Seeing it work made the vision real in a way static designs never could.</p>
               </div>
             </li>
           </ul>
@@ -803,18 +730,18 @@
     </section>
 
 
-    <!-- ── NEXT PROJECT ── -->
+    <!-- NEXT PROJECT -->
     <section class="section section--subtle" aria-labelledby="next-heading">
       <div class="container">
         <div class="section-hdr fade-up">
           <p class="section-label">Next Project</p>
         </div>
-        <a href="/work/hub" class="next-card fade-up" data-d="1" aria-label="Next case study: Financial Finesse Hub">
+        <a href="/work/smart-benefits" class="next-card fade-up" data-d="1" aria-label="Next case study: Smart Benefits">
           <p class="next-card__eyebrow">Up next</p>
           <div class="next-card__inner">
             <div>
-              <h2 id="next-heading" class="next-card__title">Financial Finesse Hub</h2>
-              <p class="next-card__desc">Redesigning a financial wellness platform from the ground up — shipped as a fully functional demo in two months.</p>
+              <h2 id="next-heading" class="next-card__title">Smart Benefits</h2>
+              <p class="next-card__desc">Designing an AI-powered benefits experience that helps employees understand and use complex workplace benefits with clarity and confidence.</p>
             </div>
             <span class="next-card__arrow" aria-hidden="true">→</span>
           </div>
@@ -837,7 +764,6 @@
           <a href="/work" class="footer__link">Work</a>
           <a href="/about" class="footer__link">About</a>
           <a href="/contact" class="footer__link">Contact</a>
-          <a href="/cdn-cgi/l/email-protection#4a3e222f283823272b330a2d272b232664292527" class="footer__link">Email</a>
           <a href="https://linkedin.com/in/brimay" target="_blank" rel="noopener" class="footer__link">LinkedIn</a>
         </nav>
       </div>
@@ -846,7 +772,7 @@
   </footer>
 
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const nav = document.getElementById('nav');

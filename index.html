@@ -228,6 +228,13 @@
     }
     .nav__cta:hover { border-color: var(--ink); }
 
+    /* DROPDOWN */
+    .nav__item--has-dropdown { position: relative; }
+    .nav__dropdown { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%) translateY(-6px); background: var(--white); border: 1px solid var(--border); border-radius: var(--r-md); box-shadow: 0 8px 32px rgba(0,0,0,.10); padding: 6px; min-width: 220px; opacity: 0; pointer-events: none; transition: opacity var(--t-f), transform var(--t-f); z-index: 300; }
+    .nav__item--has-dropdown:hover .nav__dropdown { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav__dropdown-link { display: block; padding: 8px 12px; font-size: var(--fs-xs); font-weight: 500; letter-spacing: .03em; color: var(--ink-2); border-radius: var(--r-sm); transition: color var(--t-f), background var(--t-f); }
+    .nav__dropdown-link:hover { color: var(--ink); background: var(--subtle); }
+
     /* Hamburger */
     .nav__burger {
       display: none;
@@ -1270,7 +1277,14 @@
         <a class="nav__brand" href="/">Bri May</a>
         <ul class="nav__links" role="list">
           <li><a class="nav__link active" href="/">Home</a></li>
-          <li><a class="nav__link" href="/work">Work</a></li>
+          <li class="nav__item--has-dropdown">
+            <a class="nav__link" href="/work">Work</a>
+            <ul class="nav__dropdown" role="list">
+              <li><a href="/aimee-ai" class="nav__dropdown-link">Aimee AI</a></li>
+              <li><a href="/work/hub" class="nav__dropdown-link">Financial Finesse Hub</a></li>
+              <li><a href="/work/smart-benefits" class="nav__dropdown-link">Smart Benefits</a></li>
+            </ul>
+          </li>
           <li><a class="nav__link" href="/about">About</a></li>
           <li><a class="nav__link" href="/resume">Résumé</a></li>
           <li><a class="nav__cta" href="/contact">Get in touch</a></li>
